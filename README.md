@@ -12,7 +12,10 @@ npm install slate-edit-table
 
 ### Features
 
-- Pressing <kbd>Enter</kbd> insert a new row
+- Pressing <kbd>Up</kbd> and <kbd>Down</kbd>, move the cursor to next/previous row
+- Pressing <kbd>Enter</kbd>, insert a new row
+- Pressing <kbd>Tab</kbd>, move the select to next cell
+- Pressing <kbd>Shift+Tab</kbd>, move the select to previous cell
 
 ### Simple Usage
 

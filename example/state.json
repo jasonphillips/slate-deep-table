@@ -8,7 +8,7 @@
                     "kind": "text",
                     "ranges": [
                         {
-                            "text": "Slate + List Edition"
+                            "text": "Slate + Table Edition"
                         }
                     ]
                 }
@@ -22,7 +22,7 @@
                     "kind": "text",
                     "ranges": [
                         {
-                            "text": "This page is a basic example of Slate + slate-edit-list plugin. Press Enter in alist to create a new list item, press Enter again to exit and Shift+Enter to create a paragraph in a list."
+                            "text": "This page is a basic example of Slate + slate-edit-table plugin."
                         }
                     ]
                 }
@@ -30,21 +30,35 @@
         },
         {
             "kind": "block",
-            "type": "ul_list",
+            "type": "table",
             "nodes": [
                 {
                     "kind": "block",
-                    "type": "list_item",
+                    "type": "table_row",
                     "nodes": [
                         {
                             "kind": "block",
-                            "type": "paragraph",
+                            "type": "table_cell",
                             "nodes": [
                                 {
                                     "kind": "text",
                                     "ranges": [
                                         {
-                                            "text": "First item in the list"
+                                            "text": "Col 1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "kind": "block",
+                            "type": "table_cell",
+                            "nodes": [
+                                {
+                                    "kind": "text",
+                                    "ranges": [
+                                        {
+                                            "text": "Col 2"
                                         }
                                     ]
                                 }
@@ -54,17 +68,17 @@
                 },
                 {
                     "kind": "block",
-                    "type": "list_item",
+                    "type": "table_row",
                     "nodes": [
                         {
                             "kind": "block",
-                            "type": "heading",
+                            "type": "table_cell",
                             "nodes": [
                                 {
                                     "kind": "text",
                                     "ranges": [
                                         {
-                                            "text": "With blocks:"
+                                            "text": "Cell 1,1"
                                         }
                                     ]
                                 }
@@ -72,13 +86,13 @@
                         },
                         {
                             "kind": "block",
-                            "type": "paragraph",
+                            "type": "table_cell",
                             "nodes": [
                                 {
                                     "kind": "text",
                                     "ranges": [
                                         {
-                                            "text": "List item can contain blocks"
+                                            "text": "Cell 1,2"
                                         }
                                     ]
                                 }
@@ -88,17 +102,17 @@
                 },
                 {
                     "kind": "block",
-                    "type": "list_item",
+                    "type": "table_row",
                     "nodes": [
                         {
                             "kind": "block",
-                            "type": "paragraph",
+                            "type": "table_cell",
                             "nodes": [
                                 {
                                     "kind": "text",
                                     "ranges": [
                                         {
-                                            "text": "Third item in the list, with a nested list"
+                                            "text": "Cell 2,1"
                                         }
                                     ]
                                 }
@@ -106,63 +120,17 @@
                         },
                         {
                             "kind": "block",
-                            "type": "ol_list",
+                            "type": "table_cell",
                             "nodes": [
                                 {
-                                    "kind": "block",
-                                    "type": "list_item",
-                                    "nodes": [
+                                    "kind": "text",
+                                    "ranges": [
                                         {
-                                            "kind": "block",
-                                            "type": "paragraph",
-                                            "nodes": [
-                                                {
-                                                    "kind": "text",
-                                                    "ranges": [
-                                                        {
-                                                            "text": "First item in the nested list"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "kind": "block",
-                                    "type": "list_item",
-                                    "nodes": [
-                                        {
-                                            "kind": "block",
-                                            "type": "paragraph",
-                                            "nodes": [
-                                                {
-                                                    "kind": "text",
-                                                    "ranges": [
-                                                        {
-                                                            "text": "Second item in the nested list"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
+                                            "text": "Cell 2,2"
                                         }
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "kind": "block",
-            "type": "paragraph",
-            "nodes": [
-                {
-                    "kind": "text",
-                    "ranges": [
-                        {
-                            "text": "End paragraph"
                         }
                     ]
                 }

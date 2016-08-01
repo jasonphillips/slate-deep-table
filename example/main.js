@@ -1,20 +1,20 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const Slate = require('slate');
-const PluginEditList = require('../lib/');
+const PluginEditTable = require('../lib/');
 
 const stateJson = require('./state');
 
 const plugins = [
-    PluginEditList()
+    PluginEditTable()
 ];
 
 const NODES = {
-    ul_list:   props => <ul {...props.attributes}>{props.children}</ul>,
-    ol_list:   props => <ol {...props.attributes}>{props.children}</ol>,
-    list_item: props => <li {...props.attributes}>{props.children}</li>,
-    paragraph: props => <p {...props.attributes}>{props.children}</p>,
-    heading:   props => <h1 {...props.attributes}>{props.children}</h1>
+    table:      props => <table><tbody {...props.attributes}>{props.children}</tbody></table>,
+    table_row:  props => <tr {...props.attributes}>{props.children}</tr>,
+    table_cell: props => <td {...props.attributes}>{props.children}</td>,
+    paragraph:  props => <p {...props.attributes}>{props.children}</p>,
+    heading:    props => <h1 {...props.attributes}>{props.children}</h1>
 };
 
 const Example = React.createClass({

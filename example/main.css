@@ -4,7 +4,16 @@
     margin: 20px auto;
 }
 
-#example pre {
+#example table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#example table tr:first-child {
     background: #f5f5f5;
-    padding: 10px;
+    font-weight: bold;
+}
+
+#example table td {
+    border: 1px solid black;
 }

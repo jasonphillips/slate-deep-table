@@ -22,8 +22,7 @@
     "http-server": "^0.9.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "slate": "^0.10.1",
-    "slate-edit-code": "^0.1.0"
+    "slate": "^0.10.8"
   },
   "scripts": {
     "prepublish": "babel ./lib --out-dir ./dist",

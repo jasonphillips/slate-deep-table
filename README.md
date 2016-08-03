@@ -37,7 +37,7 @@ const plugins = [
 
 `slate-edit-table` exports utilities and transforms:
 
-#### `utils.insertRow`
+#### `utils.isSelectionInTable`
 
 `plugin.utils.isSelectionInTable(state: State) => Boolean`
 

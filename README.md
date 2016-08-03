@@ -32,3 +32,43 @@ const plugins = [
 - ``[typeTable: String]`` — type for table
 - ``[typeRow: String]`` — type for the rows.
 - ``[typeCell: String]`` — type for the cells.
+
+### Utilities and Transform
+
+`slate-edit-table` exports utilities and transforms:
+
+#### `utils.insertRow`
+
+`plugin.utils.isSelectionInTable(state: State) => Boolean`
+
+Return true if selection is inside a table.
+
+#### `transforms.insertRow`
+
+`plugin.transforms.insertRow(transform: Transform, at: Number?) => Transform`
+
+Insert a new row after the current one or at the specific index (`at`).
+
+#### `transforms.insertColumn`
+
+`plugin.transforms.insertColumn(transform: Transform, at: Number?) => Transform`
+
+Insert a new column after the current one or at the specific index (`at`).
+
+#### `transforms.removeRow`
+
+`plugin.transforms.insertRow(transform: Transform, at: Number?) => Transform`
+
+Remove current row or the one at a specific index (`at`).
+
+#### `transforms.removeColumn`
+
+`plugin.transforms.insertColumn(transform: Transform, at: Number?) => Transform`
+
+Remove current column or the one at a specific index (`at`).
+
+#### `transforms.moveSelection`
+
+`plugin.transforms.moveSelection(transform: Transform, column: Number, row: Number) => Transform`
+
+Move the selection to a specific position in the table.

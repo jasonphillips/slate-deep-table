@@ -7,6 +7,16 @@
 #example table {
     width: 100%;
     border-collapse: collapse;
+    border-top: 1px solid black;
+}
+
+#example table tr {
+    border: none;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 #example table tr:first-child {
@@ -16,4 +26,9 @@
 
 #example table td {
     border: 1px solid black;
+    border-top: none;
+   border-bottom: none;
+   border-right: none;
+    flex: 1;
+    word-break: break-all;
 }

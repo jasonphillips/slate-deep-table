@@ -57,7 +57,7 @@ const Example = React.createClass({
         let { state } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.deleteColumn(state.transform())
+            tablePlugin.transforms.removeColumn(state.transform())
                 .apply()
         );
     },
@@ -66,7 +66,7 @@ const Example = React.createClass({
         let { state } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.deleteRow(state.transform())
+            tablePlugin.transforms.removeRow(state.transform())
                 .apply()
         );
     },

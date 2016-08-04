@@ -57,13 +57,13 @@ Insert a new column after the current one or at the specific index (`at`).
 
 #### `transforms.removeRow`
 
-`plugin.transforms.insertRow(transform: Transform, at: Number?) => Transform`
+`plugin.transforms.removeRow(transform: Transform, at: Number?) => Transform`
 
 Remove current row or the one at a specific index (`at`).
 
 #### `transforms.removeColumn`
 
-`plugin.transforms.insertColumn(transform: Transform, at: Number?) => Transform`
+`plugin.transforms.removeColumn(transform: Transform, at: Number?) => Transform`
 
 Remove current column or the one at a specific index (`at`).
 

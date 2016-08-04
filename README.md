@@ -43,6 +43,12 @@ const plugins = [
 
 Return true if selection is inside a table.
 
+#### `transforms.insertTable`
+
+`plugin.transforms.insertTable(transform: Transform, columns: Number?, rows: Number?) => Transform`
+
+Insert a new table, current block text will be inserted into the first cell.
+
 #### `transforms.insertRow`
 
 `plugin.transforms.insertRow(transform: Transform, at: Number?) => Transform`
@@ -54,6 +60,12 @@ Insert a new row after the current one or at the specific index (`at`).
 `plugin.transforms.insertColumn(transform: Transform, at: Number?) => Transform`
 
 Insert a new column after the current one or at the specific index (`at`).
+
+#### `transforms.removeTable`
+
+`plugin.transforms.removeTable(transform: Transform) => Transform`
+
+Remove current table.
 
 #### `transforms.removeRow`
 

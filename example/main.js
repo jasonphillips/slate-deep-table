@@ -35,6 +35,15 @@ const Example = React.createClass({
         return NODES[node.type];
     },
 
+    onInsertTable: function() {
+        let { state } = this.state;
+
+        this.onChange(
+            tablePlugin.transforms.insertTable(state.transform())
+                .apply()
+        );
+    },
+
     onInsertColumn: function() {
         let { state } = this.state;
 
@@ -71,13 +80,31 @@ const Example = React.createClass({
         );
     },
 
-    renderToolbar: function() {
+    onRemoveTable: function() {
+        let { state } = this.state;
+
+        this.onChange(
+            tablePlugin.transforms.removeTable(state.transform())
+                .apply()
+        );
+    },
+
+    renderNormalToolbar: function() {
+        return (
+            <div>
+                <button onClick={this.onInsertTable}>Insert Table</button>
+            </div>
+        );
+    },
+
+    renderTableToolbar: function() {
         return (
             <div>
                 <button onClick={this.onInsertColumn}>Insert Column</button>
                 <button onClick={this.onInsertRow}>Insert Row</button>
                 <button onClick={this.onRemoveColumn}>Remove Column</button>
                 <button onClick={this.onRemoveRow}>Remove Row</button>
+                <button onClick={this.onRemoveTable}>Remove Table</button>
             </div>
         );
     },
@@ -88,7 +115,7 @@ const Example = React.createClass({
 
         return (
             <div>
-                {isTable? this.renderToolbar() : null}
+                {isTable? this.renderTableToolbar() : this.renderNormalToolbar()}
                 <Slate.Editor
                     placeholder={'Enter some text...'}
                     plugins={plugins}

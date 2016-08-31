@@ -3,7 +3,7 @@
   "description": "A Slate plugin to handle keyboard events in tables.",
   "version": "0.3.0",
   "license": "Apache-2.0",
-  "repository": "git://github.com/SamyPesse/slate-edit-table.git",
+  "repository": "git://github.com/GitbookIO/slate-edit-table.git",
   "main": "./dist/index.js",
   "dependencies": {
     "immutable": "^3.8.1",

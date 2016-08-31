@@ -1,0 +1,36 @@
+
+nodes:
+  # At least one row
+  - kind: block
+    type: table
+    nodes:
+      - kind: block
+        type: table_row
+        nodes:
+          - kind: block
+            type: table_cell
+            nodes:
+              - kind: text
+                text: ""
+  # Only rows
+  - kind: block
+    type: table
+    nodes:
+      # Row 1
+      - kind: block
+        type: table_row
+        nodes:
+          - kind: block
+            type: table_cell
+            nodes:
+              - kind: text
+                text: "Row 1, Col 1"
+      # Row 3
+      - kind: block
+        type: table_row
+        nodes:
+          - kind: block
+            type: table_cell
+            nodes:
+              - kind: text
+                text: "Row 3, Col 1"

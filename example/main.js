@@ -10,12 +10,14 @@ const plugins = [
     tablePlugin
 ];
 
-const NODES = {
-    table:      props => <table><tbody {...props.attributes}>{props.children}</tbody></table>,
-    table_row:  props => <tr {...props.attributes}>{props.children}</tr>,
-    table_cell: props => <td {...props.attributes}>{props.children}</td>,
-    paragraph:  props => <p {...props.attributes}>{props.children}</p>,
-    heading:    props => <h1 {...props.attributes}>{props.children}</h1>
+const schema = {
+    nodes: {
+        table:      props => <table><tbody {...props.attributes}>{props.children}</tbody></table>,
+        table_row:  props => <tr {...props.attributes}>{props.children}</tr>,
+        table_cell: props => <td {...props.attributes}>{props.children}</td>,
+        paragraph:  props => <p {...props.attributes}>{props.children}</p>,
+        heading:    props => <h1 {...props.attributes}>{props.children}</h1>
+    }
 };
 
 const Example = React.createClass({
@@ -29,10 +31,6 @@ const Example = React.createClass({
         this.setState({
             state: state
         });
-    },
-
-    renderNode: function(node) {
-        return NODES[node.type];
     },
 
     onInsertTable: function() {
@@ -121,7 +119,7 @@ const Example = React.createClass({
                     plugins={plugins}
                     state={state}
                     onChange={this.onChange}
-                    renderNode={this.renderNode}
+                    schema={schema}
                 />
             </div>
         );

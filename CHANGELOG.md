@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 - `insertTable` does not grab text from current block anymore, and simply insert an empty table.
 
+### Fixed
+- Up/Down arrows behavior inside tables
+
 ## [0.5.0] - 2016-09-15
 ### Added
 - `TablePosition.is{First|Last}{Row|Column|Cell}` methods

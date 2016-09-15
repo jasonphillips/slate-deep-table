@@ -24,6 +24,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - Schema normalization rules
 
-  [Unreleased]: https://github.com/GitbookIO/slate-edit-table/compare/0.5.0...HEAD
+  [Unreleased]: https://github.com/GitbookIO/slate-edit-table/compare/0.5.1...HEAD
+  [0.5.1]: https://github.com/GitbookIO/slate-edit-table/compare/0.5.0...0.5.1
   [0.5.0]: https://github.com/GitbookIO/slate-edit-table/compare/0.4.0...0.5.0
   [0.4.0]: https://github.com/GitbookIO/slate-edit-table/compare/0.3.0...0.4.0

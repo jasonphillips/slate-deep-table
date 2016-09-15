@@ -85,3 +85,9 @@ Remove current column or the one at a specific index (`at`).
 `plugin.transforms.moveSelection(transform: Transform, column: Number, row: Number) => Transform`
 
 Move the selection to a specific position in the table.
+
+#### `transforms.moveSelectionBy`
+
+`plugin.transforms.moveSelectionBy(transform: Transform, column: Number, row: Number) => Transform`
+
+Move the selection by the given amount of columns and rows.

@@ -135,6 +135,20 @@
                     ]
                 }
             ]
-        }
+        },
+        {
+            "kind": "block",
+            "type": "paragraph",
+            "nodes": [
+                {
+                    "kind": "text",
+                    "ranges": [
+                        {
+                            "text": "Use Tab and Shift+Tab to move from cell to cells. Press Enter to go to next row. Press Up/Down to navigate the rows."
+                        }
+                    ]
+                }
+            ]
+        },
     ]
 }

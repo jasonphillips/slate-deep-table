@@ -48,7 +48,7 @@ Return true if selection is inside a table.
 
 `plugin.transforms.insertTable(transform: Transform, columns: Number?, rows: Number?) => Transform`
 
-Insert a new table, current block text will be inserted into the first cell.
+Insert a new empty table.
 
 #### `transforms.insertRow`
 

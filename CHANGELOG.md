@@ -5,7 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
-Nothing for now.
+### Changed
+- `insertTable` does not grab text from current block anymore, and simply insert an empty table.
 
 ## [0.5.0] - 2016-09-15
 ### Added

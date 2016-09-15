@@ -12,7 +12,7 @@ Nothing for now.
 - `TablePosition.is{First|Last}{Row|Column|Cell}` methods
 
 ### Changed
-- *BREAKING CHANGE* Now uses `slate^0.14.x`
+- **BREAKING** Now uses `slate^0.14.x`
 - Split transform `moveSelection` into `moveSelection` and `moveSelectionBy`
 
 ## [0.4.0] - 2016-09-06

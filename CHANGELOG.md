@@ -6,7 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 
 ### Changed
-- `removeColumn` on a single-column table clear the column
+- `removeColumn` clears the column instead, if it is the last remaining column
+- `removeRow` clears the row instead, if it is the last remaining row
 
 ### Fixed
 - Undo of `insertColumn` when cursor is in inserted column

@@ -1,7 +1,6 @@
 module.exports = function(plugin, state) {
-    const blocks = state.document.filterDescendants(node => node.type == 'table_cell');
-    const blockStart = blocks.get(3);
-    const blockEnd = blocks.get(6);
+    const blockStart = state.document.getDescendant('anchor');
+    const blockEnd = state.document.getDescendant('focus');
 
     const withCursor = state.transform()
         .collapseToStartOf(blockStart)

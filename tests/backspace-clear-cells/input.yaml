@@ -28,7 +28,9 @@ nodes:
             type: table_cell
             nodes:
               - kind: text
+                # Start selection here, expected result is text empty [
                 text: "Col 0, Row 1"
+                key: "anchor"
           - kind: block
             type: table_cell
             nodes:
@@ -46,7 +48,9 @@ nodes:
             type: table_cell
             nodes:
               - kind: text
+                # ] End selection here, expected result is text empty
                 text: "Col 0, Row 2"
+                key: "focus"
           - kind: block
             type: table_cell
             nodes:

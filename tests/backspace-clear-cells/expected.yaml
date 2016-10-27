@@ -3,7 +3,6 @@ nodes:
   - kind: block
     type: table
     nodes:
-      # Row 1
       - kind: block
         type: table_row
         nodes:
@@ -11,22 +10,20 @@ nodes:
             type: table_cell
             nodes:
               - kind: text
-                text: "Row 1, Col 1"
+                text: "Col 0, Row 0"
           - kind: block
             type: table_cell
             nodes:
               - kind: text
-                text: "Row 1, Col 2"
+                text: "Col 1, Row 0"
           - kind: block
             type: table_cell
             nodes:
               - kind: text
-                text: "Row 1, Col 3"
-      # Row 2
+                text: "Col 2, Row 0"
       - kind: block
         type: table_row
         nodes:
-          # Missing columns
           - kind: block
             type: table_cell
             nodes:
@@ -42,11 +39,9 @@ nodes:
             nodes:
               - kind: text
                 text: ""
-      # Row 3
       - kind: block
         type: table_row
         nodes:
-          # Invalid columns replace by empty cell
           - kind: block
             type: table_cell
             nodes:
@@ -56,9 +51,9 @@ nodes:
             type: table_cell
             nodes:
               - kind: text
-                text: "Row 3, Col 1"
+                text: "Col 1, Row 2"
           - kind: block
             type: table_cell
             nodes:
               - kind: text
-                text: "Row 3, Col 3"
+                text: "Col 2, Row 2"

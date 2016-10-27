@@ -46,17 +46,17 @@ nodes:
       - kind: block
         type: table_row
         nodes:
-          - kind: block
-            type: table_cell
-            nodes:
-              - kind: text
-                text: "Row 3, Col 1"
           # Invalid columns replace by empty cell
           - kind: block
             type: table_cell
             nodes:
               - kind: text
                 text: ""
+          - kind: block
+            type: table_cell
+            nodes:
+              - kind: text
+                text: "Row 3, Col 1"
           - kind: block
             type: table_cell
             nodes:

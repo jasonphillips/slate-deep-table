@@ -7,3 +7,10 @@ nodes:
       - kind: text
         text: "No rows"
 
+  # A cell without surrounding tr gets inserted within a table, and within a tr
+  - kind: block
+    type: table_cell
+    nodes:
+      - kind: text
+        text: "No rows"
+

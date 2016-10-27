@@ -1,0 +1,9 @@
+
+nodes:
+  # A row without surrounding table gets inserted within a table
+  - kind: block
+    type: table_row
+    nodes:
+      - kind: text
+        text: "No rows"
+

@@ -96,5 +96,5 @@ Move the selection by the given amount of columns and rows.
 
 `plugin.transforms.setColumnAlign(transform: Transform, align: String, at: Number) => Transform`
 
-Sets column alignment for a given column (`at`). `align` defaults to center,
-`at` is optional and defaults to current cursor position.
+Sets column alignment for a given column (`at`), in the current table. `align`
+defaults to center, `at` is optional and defaults to current cursor position.

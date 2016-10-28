@@ -1,0 +1,24 @@
+
+nodes:
+  # A row without surrounding table gets inserted within a table
+  - kind: block
+    type: table
+    nodes:
+      - kind: block
+        type: table_row
+        nodes:
+          - kind: text
+            text: "No rows"
+
+  # A cell without surrounding tr gets inserted within a table, and within a tr
+  - kind: block
+    type: table
+    nodes:
+      - kind: block
+        type: table_row
+        nodes:
+          - kind: block
+            type: table_cell
+            nodes:
+              - kind: text
+                text: "No rows"

@@ -14,7 +14,10 @@ const schema = {
     nodes: {
         table:      props => <table><tbody {...props.attributes}>{props.children}</tbody></table>,
         table_row:  props => <tr {...props.attributes}>{props.children}</tr>,
-        table_cell: props => <td {...props.attributes}>{props.children}</td>,
+        table_cell: (props) => {
+            let align = props.node.get('data').get('align') || 'left'
+            return <td style={{ textAlign: align }} {...props.attributes}>{props.children}</td>;
+        },
         paragraph:  props => <p {...props.attributes}>{props.children}</p>,
         heading:    props => <h1 {...props.attributes}>{props.children}</h1>
     }
@@ -87,6 +90,15 @@ const Example = React.createClass({
         );
     },
 
+    onSetAlign: function (event, align) {
+        let { state } = this.state;
+
+        this.onChange(
+            tablePlugin.transforms.setColumnAlign(state.transform(), align)
+                .apply()
+        );
+    },
+
     renderNormalToolbar: function() {
         return (
             <div>
@@ -103,6 +115,10 @@ const Example = React.createClass({
                 <button onClick={this.onRemoveColumn}>Remove Column</button>
                 <button onClick={this.onRemoveRow}>Remove Row</button>
                 <button onClick={this.onRemoveTable}>Remove Table</button>
+                <br />
+                <button onClick={(e) => this.onSetAlign(e, 'left') }>Set align left</button>
+                <button onClick={(e) => this.onSetAlign(e, 'center') }>Set align center</button>
+                <button onClick={(e) => this.onSetAlign(e, 'right') }>Set align right</button>
             </div>
         );
     },

@@ -91,3 +91,10 @@ Move the selection to a specific position in the table.
 `plugin.transforms.moveSelectionBy(transform: Transform, column: Number, row: Number) => Transform`
 
 Move the selection by the given amount of columns and rows.
+
+#### `transforms.setColumnAlign`
+
+`plugin.transforms.setColumnAlign(transform: Transform, align: String, at: Number) => Transform`
+
+Sets column alignment for a given column (`at`), in the current table. `align`
+defaults to center, `at` is optional and defaults to current cursor position.

@@ -87,6 +87,15 @@ const Example = React.createClass({
         );
     },
 
+    onSetAlign: function (event, align) {
+        let { state } = this.state;
+
+        this.onChange(
+            tablePlugin.transforms.setColumnAlign(state.transform(), null, align)
+                .apply()
+        );
+    },
+
     renderNormalToolbar: function() {
         return (
             <div>
@@ -103,6 +112,10 @@ const Example = React.createClass({
                 <button onClick={this.onRemoveColumn}>Remove Column</button>
                 <button onClick={this.onRemoveRow}>Remove Row</button>
                 <button onClick={this.onRemoveTable}>Remove Table</button>
+                <br />
+                <button onClick={(e) => this.onSetAlign(e, 'left') }>Set align left</button>
+                <button onClick={(e) => this.onSetAlign(e, 'center') }>Set align center</button>
+                <button onClick={(e) => this.onSetAlign(e, 'right') }>Set align right</button>
             </div>
         );
     },

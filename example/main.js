@@ -14,7 +14,10 @@ const schema = {
     nodes: {
         table:      props => <table><tbody {...props.attributes}>{props.children}</tbody></table>,
         table_row:  props => <tr {...props.attributes}>{props.children}</tr>,
-        table_cell: props => <td {...props.attributes}>{props.children}</td>,
+        table_cell: (props) => {
+            let align = props.node.get('data').get('align') || 'left'
+            return <td style={{ textAlign: align }} {...props.attributes}>{props.children}</td>;
+        },
         paragraph:  props => <p {...props.attributes}>{props.children}</p>,
         heading:    props => <h1 {...props.attributes}>{props.children}</h1>
     }

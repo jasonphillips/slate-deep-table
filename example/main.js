@@ -94,7 +94,7 @@ const Example = React.createClass({
         let { state } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.setColumnAlign(state.transform(), null, align)
+            tablePlugin.transforms.setColumnAlign(state.transform(), align)
                 .apply()
         );
     },

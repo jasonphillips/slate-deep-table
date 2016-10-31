@@ -9,8 +9,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - Expose `setColumnAlign` transform
 - Expose `ALIGN.{LEFT,RIGHT,CENTER}` constants
-- PR [#20](https://github.com/GitbookIO/slate-edit-table/pull/20) Add watchify
-  package.json script as watch-example.
 
 ### Fixed
 - Rules to ensure cells or rows are always within a table. Fix

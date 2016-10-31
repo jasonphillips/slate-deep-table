@@ -3,7 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.8.0] - 2016-10-27
+  [0.8.0]: https://github.com/GitbookIO/slate-edit-table/compare/0.7.0...0.8.0
+
+### Added
+- Expose `setColumnAlign` transform
+- Expose `ALIGN.{LEFT,RIGHT,CENTER}` constants
+- PR [#20](https://github.com/GitbookIO/slate-edit-table/pull/20) Add watchify
+  package.json script as watch-example.
+
+### Fixed
+- Rules to ensure cells or rows are always within a table. Fix
+  [#13](https://github.com/GitbookIO/slate-edit-table/issues/13)
+
 ## [0.7.0] - 2016-10-27
+  [0.7.0]: https://github.com/GitbookIO/slate-edit-table/compare/0.6.0...0.7.0
+
 - Adapt for upcoming Slate release
 - Improve stability
 

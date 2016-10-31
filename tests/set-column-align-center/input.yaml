@@ -11,7 +11,6 @@ nodes:
             nodes:
               - kind: text
                 text: "Col 0, Row 0"
-          # cursor is on second col, so this column gets center aligned
           - kind: block
             type: table_cell
             nodes:
@@ -22,13 +21,13 @@ nodes:
         nodes:
           - kind: block
             type: table_cell
+            key: '_cursor_1'
             nodes:
               - kind: text
                 text: "Col 0, Row 1"
-          # cursor is on second col, so this column gets center aligned
           - kind: block
             type: table_cell
-            key: '_cursor_'
+            key: '_cursor_2'
             nodes:
               - kind: text
                 text: "Col 1, Row 1"
@@ -40,7 +39,6 @@ nodes:
             nodes:
               - kind: text
                 text: "Col 0, Row 2"
-          # cursor is on second col, so this column gets center aligned
           - kind: block
             type: table_cell
             nodes:

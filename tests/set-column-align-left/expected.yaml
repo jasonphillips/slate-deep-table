@@ -2,6 +2,9 @@
 nodes:
   - kind: block
     type: table
+    data:
+      align:
+          - left
     nodes:
       - kind: block
         type: table_row
@@ -9,8 +12,6 @@ nodes:
           # at argument is set to 1, so this column gets left aligned
           - kind: block
             type: table_cell
-            data:
-              align: left
             nodes:
               - kind: text
                 text: "Col 0, Row 0"
@@ -22,11 +23,8 @@ nodes:
       - kind: block
         type: table_row
         nodes:
-          # at argument is set to 1, so this column gets left aligned
           - kind: block
             type: table_cell
-            data:
-              align: left
             nodes:
               - kind: text
                 text: "Col 0, Row 1"
@@ -38,11 +36,8 @@ nodes:
       - kind: block
         type: table_row
         nodes:
-          # at argument is set to 1, so this column gets left aligned
           - kind: block
             type: table_cell
-            data:
-              align: left
             nodes:
               - kind: text
                 text: "Col 0, Row 2"

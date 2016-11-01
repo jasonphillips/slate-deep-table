@@ -6,6 +6,10 @@ nodes:
         text: "Before"
   - kind: block
     type: table
+    data:
+        align:
+            - left
+            - left
     nodes:
       - kind: block
         type: table_row

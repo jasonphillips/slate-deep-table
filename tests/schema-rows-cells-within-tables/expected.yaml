@@ -3,6 +3,9 @@ nodes:
   # A row without surrounding table gets inserted within a table
   - kind: block
     type: table
+    data:
+      align:
+        - left
     nodes:
       - kind: block
         type: table_row
@@ -13,6 +16,9 @@ nodes:
   # A cell without surrounding tr gets inserted within a table, and within a tr
   - kind: block
     type: table
+    data:
+      align:
+        - left
     nodes:
       - kind: block
         type: table_row

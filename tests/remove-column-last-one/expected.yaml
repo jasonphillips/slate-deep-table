@@ -2,6 +2,9 @@
 nodes:
   - kind: block
     type: table
+    data:
+      align:
+        - left
     nodes:
       - kind: block
         type: table_row

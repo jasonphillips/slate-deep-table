@@ -4,8 +4,9 @@ nodes:
     type: table
     data:
       align:
+        - center
         - left
-        - left
+        - center
     nodes:
       - kind: block
         type: table_row
@@ -15,6 +16,11 @@ nodes:
             nodes:
               - kind: text
                 text: "Col 0, Row 0"
+          - kind: block
+            type: table_cell
+            nodes:
+              - kind: text
+                text: ""
           - kind: block
             type: table_cell
             nodes:
@@ -32,6 +38,11 @@ nodes:
             type: table_cell
             nodes:
               - kind: text
+                text: ""
+          - kind: block
+            type: table_cell
+            nodes:
+              - kind: text
                 text: "Col 1, Row 1"
       - kind: block
         type: table_row
@@ -41,6 +52,11 @@ nodes:
             nodes:
               - kind: text
                 text: "Col 0, Row 2"
+          - kind: block
+            type: table_cell
+            nodes:
+              - kind: text
+                text: ""
           - kind: block
             type: table_cell
             nodes:

@@ -6,8 +6,10 @@
   "repository": "git://github.com/GitbookIO/slate-edit-table.git",
   "main": "./dist/index.js",
   "dependencies": {
-    "immutable": "^3.8.1",
-    "slate": "GitbookIO/slate#26c6105c86994b2a19cf08dd6327a00d83bc497c"
+    "immutable": "^3.8.1"
+  },
+  "peerDependencies": {
+    "slate": "^0.14.6"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
@@ -25,6 +27,7 @@
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "read-metadata": "^1.0.0",
+    "slate": "GitbookIO/slate#26c6105c86994b2a19cf08dd6327a00d83bc497c",
     "watchify": "^3.7.0"
   },
   "scripts": {

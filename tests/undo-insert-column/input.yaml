@@ -30,9 +30,9 @@ nodes:
                 text: "Col 0, Row 1"
           - kind: block
             type: table_cell
-            key: '_cursor_'
             nodes:
               - kind: text
+                key: '_cursor_'
                 text: "Col 1, Row 1"
       - kind: block
         type: table_row

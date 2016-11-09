@@ -3,8 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.8.3] - 2016-11-09
+  [0.8.3]: https://github.com/GitbookIO/slate-edit-table/compare/0.8.2...0.8.3
+
+- Enforce align to be Immutable.List
+- Undo is now fixed, using GitbookIO:slate
+
 ## [0.8.2] - 2016-11-03
-  [0.8.1]: https://github.com/GitbookIO/slate-edit-table/compare/0.8.0...0.8.1
+  [0.8.2]: https://github.com/GitbookIO/slate-edit-table/compare/0.8.1...0.8.2
 
 - Move slate to `peerDependencies`
 

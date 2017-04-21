@@ -6,7 +6,7 @@ module.exports = function(plugin, state) {
     const transform = state.transform();
     state = transform
         .moveToRangeOf(cursorBlock)
-        .moveForward(offset)
+        .move(offset)
         .apply();
 
     state = plugin.transforms

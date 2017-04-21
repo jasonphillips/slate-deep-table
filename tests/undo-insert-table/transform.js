@@ -6,7 +6,7 @@ module.exports = function(plugin, state) {
 
     state = transform
         .moveToRangeOf(cursorBlock)
-        .moveForward(6) // Cursor here: Before|After
+        .move(6) // Cursor here: Before|After
         .apply();
 
     state = plugin.transforms.insertTable(state.transform()).apply();

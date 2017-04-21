@@ -3,7 +3,7 @@ module.exports = function(plugin, state) {
     const transform = state.transform();
     state = transform
         .moveToRangeOf(cursorBlock)
-        .moveForward(6) // Cursor here: Before|After
+        .move(6) // Cursor here: Before|After
         .apply();
 
     return plugin.transforms.insertTable(state.transform())

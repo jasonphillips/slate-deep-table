@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.10.0] - 2017-07-13
+  [0.10.0]: https://github.com/GitbookIO/slate-edit-table/compare/0.9.0...0.10.0
+
+- Add rule to prevent nested blocks in cells
+
 ## [0.9.0] - 2016-04-21
   [0.9.0]: https://github.com/GitbookIO/slate-edit-table/compare/0.8.4...0.9.0
 

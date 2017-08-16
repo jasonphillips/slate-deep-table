@@ -4,6 +4,19 @@
     margin: 20px auto;
 }
 
+#example .buttons {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 100%;
+    width: 100%;
+    min-height: 1.5em;
+    text-align: center;
+    background-color: #555;
+    padding: 5px;
+    z-index: 100;
+}
+
 #example table {
     width: 100%;
     border-collapse: collapse;
@@ -14,12 +27,9 @@
     border: none;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
 }
 
-#example table tr:first-child {
+#example table thead tr {
     background: #f5f5f5;
     font-weight: bold;
 }
@@ -27,8 +37,21 @@
 #example table td {
     border: 1px solid black;
     border-top: none;
-   border-bottom: none;
-   border-right: none;
-    flex: 1;
-    word-break: break-all;
+    border-bottom: none;
+    border-right: none;
+    padding: .5em;
+    position: relative;
+}
+
+/* for nested tables */
+#example table td > table {
+    width: 100%;
+}
+
+td > p:first-child {
+    margin-top: 0;
+}
+
+td > p:last-child {
+    margin-bottom: 0;
 }

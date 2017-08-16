@@ -12,16 +12,14 @@ const plugins = [
 
 const schema = {
     nodes: {
-        table:      props => <table><tbody {...props.attributes}>{props.children}</tbody></table>,
-        table_row:  props => <tr {...props.attributes}>{props.children}</tr>,
-        table_cell: (props) => {
-            let align = props.node.get('data').get('align') || 'left'
-            return <td style={{ textAlign: align }} {...props.attributes}>{props.children}</td>;
-        },
         paragraph:  props => <p {...props.attributes}>{props.children}</p>,
-        heading:    props => <h1 {...props.attributes}>{props.children}</h1>
+        heading:    props => <h1 {...props.attributes}>{props.children}</h1>,
+        subheading: props => <h2 {...props.attributes}>{props.children}</h2>,
     }
 };
+
+Object.assign(schema.nodes, tablePlugin.utils.getDefaultRenderers());
+
 
 const Example = React.createClass({
     getInitialState: function() {
@@ -90,18 +88,18 @@ const Example = React.createClass({
         );
     },
 
-    onSetAlign: function (event, align) {
+    onToggleHeaders: function() {
         let { state } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.setColumnAlign(state.transform(), align)
+            tablePlugin.transforms.toggleHeaders(state.transform())
                 .apply()
         );
     },
 
     renderNormalToolbar: function() {
         return (
-            <div>
+            <div className="buttons">
                 <button onClick={this.onInsertTable}>Insert Table</button>
             </div>
         );
@@ -109,16 +107,14 @@ const Example = React.createClass({
 
     renderTableToolbar: function() {
         return (
-            <div>
+            <div className="buttons">
+                <button onClick={this.onInsertTable}>Insert Table</button>
                 <button onClick={this.onInsertColumn}>Insert Column</button>
                 <button onClick={this.onInsertRow}>Insert Row</button>
                 <button onClick={this.onRemoveColumn}>Remove Column</button>
                 <button onClick={this.onRemoveRow}>Remove Row</button>
                 <button onClick={this.onRemoveTable}>Remove Table</button>
-                <br />
-                <button onClick={(e) => this.onSetAlign(e, 'left') }>Set align left</button>
-                <button onClick={(e) => this.onSetAlign(e, 'center') }>Set align center</button>
-                <button onClick={(e) => this.onSetAlign(e, 'right') }>Set align right</button>
+                <button onClick={this.onToggleHeaders}>Toggle Headers</button>
             </div>
         );
     },
@@ -126,6 +122,9 @@ const Example = React.createClass({
     render: function() {
         let { state } = this.state;
         let isTable = tablePlugin.utils.isSelectionInTable(state);
+        window.getJSON = () => console.log(
+            JSON.stringify(Slate.Raw.serialize(state, {terse:true}),null,2)
+        )
 
         return (
             <div>

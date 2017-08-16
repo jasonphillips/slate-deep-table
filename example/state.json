@@ -1,154 +1,719 @@
 {
-    "nodes": [
+  "nodes": [
+    {
+      "kind": "block",
+      "type": "heading",
+      "nodes": [
         {
-            "kind": "block",
-            "type": "heading",
-            "nodes": [
+          "kind": "text",
+          "text": "Slate with Deep Tables"
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "type": "paragraph",
+      "nodes": [
+        {
+          "kind": "text",
+          "text": "The page demonstrates the slate-deep-table plugin."
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "type": "subheading",
+      "nodes": [
+        {
+          "kind": "text",
+          "text": "Basic Tables"
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "type": "paragraph",
+      "nodes": [
+        {
+          "kind": "text",
+          "text": "Simple tables can still contain block-level content. This page is intentionally not using other plugins, but you could easily embed lists, images, or any other block-level content in cells."
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "type": "table",
+      "nodes": [
+        {
+          "kind": "block",
+          "type": "table_row",
+          "nodes": [
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
                 {
-                    "kind": "text",
-                    "ranges": [
-                        {
-                            "text": "Slate + Table Edition"
-                        }
-                    ]
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Week"
+                    }
+                  ]
                 }
-            ]
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Assignments"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
         {
-            "kind": "block",
-            "type": "paragraph",
-            "nodes": [
+          "kind": "block",
+          "type": "table_row",
+          "nodes": [
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
                 {
-                    "kind": "text",
-                    "ranges": [
-                        {
-                            "text": "This page is a basic example of Slate + slate-edit-table plugin."
-                        }
-                    ]
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "August 21st"
+                    }
+                  ]
                 }
-            ]
-        },
-        {
-            "kind": "block",
-            "type": "table",
-            "nodes": [
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
                 {
-                    "kind": "block",
-                    "type": "table_row",
-                    "nodes": [
-                        {
-                            "kind": "block",
-                            "type": "table_cell",
-                            "nodes": [
-                                {
-                                    "kind": "text",
-                                    "ranges": [
-                                        {
-                                            "text": "Col 1"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "kind": "block",
-                            "type": "table_cell",
-                            "nodes": [
-                                {
-                                    "kind": "text",
-                                    "ranges": [
-                                        {
-                                            "text": "Col 2"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Introductory reading"
+                    }
+                  ]
                 },
                 {
-                    "kind": "block",
-                    "type": "table_row",
-                    "nodes": [
-                        {
-                            "kind": "block",
-                            "type": "table_cell",
-                            "nodes": [
-                                {
-                                    "kind": "text",
-                                    "ranges": [
-                                        {
-                                            "text": "Cell 1,1"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "kind": "block",
-                            "type": "table_cell",
-                            "nodes": [
-                                {
-                                    "kind": "text",
-                                    "ranges": [
-                                        {
-                                            "text": "Cell 1,2"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "kind": "block",
-                    "type": "table_row",
-                    "nodes": [
-                        {
-                            "kind": "block",
-                            "type": "table_cell",
-                            "nodes": [
-                                {
-                                    "kind": "text",
-                                    "ranges": [
-                                        {
-                                            "text": "Cell 2,1"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "kind": "block",
-                            "type": "table_cell",
-                            "nodes": [
-                                {
-                                    "kind": "text",
-                                    "ranges": [
-                                        {
-                                            "text": "Cell 2,2"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Pre-test One"
+                    }
+                  ]
                 }
-            ]
+              ]
+            }
+          ]
         },
         {
-            "kind": "block",
-            "type": "paragraph",
-            "nodes": [
+          "kind": "block",
+          "type": "table_row",
+          "nodes": [
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
                 {
-                    "kind": "text",
-                    "ranges": [
-                        {
-                            "text": "Use Tab and Shift+Tab to move from cell to cells. Press Enter to go to next row. Press Up/Down to navigate the rows."
-                        }
-                    ]
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "August 28th"
+                    }
+                  ]
                 }
-            ]
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Discussion Question One"
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Find partners for group project"
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Begin Chapters 1-3"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "type": "paragraph",
+      "nodes": [
+        {
+          "kind": "text",
+          "text": "Use Tab and Shift+Tab to move from cell to cells. Press Up/Down to navigate the rows."
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "type": "subheading",
+      "nodes": [
+        {
+          "kind": "text",
+          "text": "Headerless"
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "type": "paragraph",
+      "nodes": [
+        {
+          "kind": "text",
+          "text": "Headerless tables can be used for aligning columns. One-row tables are always headerless, but you can use the Toggle Headers button to hide or show headers on any table."
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "type": "table",
+      "nodes": [
+        {
+          "kind": "block",
+          "type": "table_row",
+          "nodes": [
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Gamma Quadrant"
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "- dominion, bad things"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Delta Quadrant"
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "- flying cubes, space monocles with laser pointers"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         },
-    ]
+        {
+          "kind": "block",
+          "type": "table_row",
+          "nodes": [
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Alpha Quadrant"
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "- somewhat self-aggrandizing name"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Beta Quadrant"
+                    }
+                  ]
+                },
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "- Various empires"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "data": {
+        "headless": true
+      }
+    },
+    {
+      "kind": "block",
+      "type": "subheading",
+      "nodes": [
+        {
+          "kind": "text",
+          "text": "Nested Tables"
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "type": "paragraph",
+      "nodes": [
+        {
+          "kind": "text",
+          "text": "If you so desire, you may even embed tables within tables."
+        }
+      ]
+    },
+    {
+      "kind": "block",
+      "type": "table",
+      "nodes": [
+        {
+          "kind": "block",
+          "type": "table_row",
+          "nodes": [
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "vero"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "odio"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "blanditiis"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "block",
+          "type": "table_row",
+          "nodes": [
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "cupiditate"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "maxime placeat facere"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "table",
+                  "nodes": [
+                    {
+                      "kind": "block",
+                      "type": "table_row",
+                      "nodes": [
+                        {
+                          "kind": "block",
+                          "type": "table_cell",
+                          "nodes": [
+                            {
+                              "kind": "block",
+                              "type": "paragraph",
+                              "nodes": [
+                                {
+                                  "kind": "text",
+                                  "text": "cupiditate"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "kind": "block",
+                          "type": "table_cell",
+                          "nodes": [
+                            {
+                              "kind": "block",
+                              "type": "paragraph",
+                              "nodes": [
+                                {
+                                  "kind": "text",
+                                  "text": "expedita"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "block",
+                      "type": "table_row",
+                      "nodes": [
+                        {
+                          "kind": "block",
+                          "type": "table_cell",
+                          "nodes": [
+                            {
+                              "kind": "block",
+                              "type": "paragraph",
+                              "nodes": [
+                                {
+                                  "kind": "text",
+                                  "text": "23"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "kind": "block",
+                          "type": "table_cell",
+                          "nodes": [
+                            {
+                              "kind": "block",
+                              "type": "paragraph",
+                              "nodes": [
+                                {
+                                  "kind": "text",
+                                  "text": "2.98"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "block",
+                      "type": "table_row",
+                      "nodes": [
+                        {
+                          "kind": "block",
+                          "type": "table_cell",
+                          "nodes": [
+                            {
+                              "kind": "block",
+                              "type": "paragraph",
+                              "nodes": [
+                                {
+                                  "kind": "text",
+                                  "text": "888.2"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "kind": "block",
+                          "type": "table_cell",
+                          "nodes": [
+                            {
+                              "kind": "block",
+                              "type": "paragraph",
+                              "nodes": [
+                                {
+                                  "kind": "text",
+                                  "text": "0"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "block",
+          "type": "table_row",
+          "nodes": [
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "Itaque"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "paragraph",
+                  "nodes": [
+                    {
+                      "kind": "text",
+                      "text": "rerum hic tenetur"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "kind": "block",
+              "type": "table_cell",
+              "nodes": [
+                {
+                  "kind": "block",
+                  "type": "table",
+                  "nodes": [
+                    {
+                      "kind": "block",
+                      "type": "table_row",
+                      "nodes": [
+                        {
+                          "kind": "block",
+                          "type": "table_cell",
+                          "nodes": [
+                            {
+                              "kind": "block",
+                              "type": "paragraph",
+                              "nodes": [
+                                {
+                                  "kind": "text",
+                                  "text": "cupiditate"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "kind": "block",
+                          "type": "table_cell",
+                          "nodes": [
+                            {
+                              "kind": "block",
+                              "type": "paragraph",
+                              "nodes": [
+                                {
+                                  "kind": "text",
+                                  "text": "expedita"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "kind": "block",
+                      "type": "table_row",
+                      "nodes": [
+                        {
+                          "kind": "block",
+                          "type": "table_cell",
+                          "nodes": [
+                            {
+                              "kind": "block",
+                              "type": "paragraph",
+                              "nodes": [
+                                {
+                                  "kind": "text",
+                                  "text": "2003"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "kind": "block",
+                          "type": "table_cell",
+                          "nodes": [
+                            {
+                              "kind": "block",
+                              "type": "paragraph",
+                              "nodes": [
+                                {
+                                  "kind": "text",
+                                  "text": "33"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

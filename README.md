@@ -62,7 +62,7 @@ Object.assign(schema.nodes, tablePlugin.utils.getDefaultRenderers());
 
 Return true if selection is inside a table.
 
-#### `utils.isSelectionInTable`
+#### `utils.getDefaultRenderers`
 
 `plugin.utils.getDefaultRenderers() => Object`
 

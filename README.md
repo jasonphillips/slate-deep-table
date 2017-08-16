@@ -1,6 +1,6 @@
 # slate-deep-table
 
-[![NPM version](https://badge.fury.io/js/slate-deep-table.svg)](http://badge.fury.io/js/slate-deep-table)
+[![npm version](https://badge.fury.io/js/slate-deep-table.svg)](https://badge.fury.io/js/slate-deep-table)
 [![Linux Build Status](https://travis-ci.org/jasonphillips/slate-deep-table.png?branch=master)](https://travis-ci.org/jasonphillips/slate-deep-table)
 
 A Slate plugin to handle tables with nested block content. Forked from the excellent [slate-edit-table](https://github.com/GitbookIO/slate-edit-table) implementation, but retooled to work with deep content.

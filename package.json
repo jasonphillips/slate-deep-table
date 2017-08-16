@@ -1,15 +1,17 @@
 {
-  "name": "slate-edit-table",
-  "description": "A Slate plugin to handle keyboard events in tables.",
-  "version": "0.10.1",
+  "name": "slate-deep-table",
+  "description": "A Slate plugin to handle tables containing complex content.",
+  "version": "0.5.0",
   "license": "Apache-2.0",
-  "repository": "git://github.com/GitbookIO/slate-edit-table.git",
+  "repository": "git://github.com/jasonphillips/slate-deep-table.git",
   "main": "./dist/index.js",
   "dependencies": {
     "immutable": "^3.8.1"
   },
   "peerDependencies": {
-    "slate": "0.x.x"
+    "slate": "0.x.x",
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
@@ -27,7 +29,7 @@
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "read-metadata": "^1.0.0",
-    "slate": "^0.20.6",
+    "slate": "^0.21.2",
     "watchify": "^3.7.0"
   },
   "scripts": {

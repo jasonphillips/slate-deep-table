@@ -5,6 +5,8 @@
 
 A Slate plugin to handle tables with nested block content. Forked from the excellent [slate-edit-table](https://github.com/GitbookIO/slate-edit-table) implementation, but retooled to work with deep content.
 
+Demo: https://jasonphillips.github.io/slate-deep-table/
+
 ### Install
 
 ```

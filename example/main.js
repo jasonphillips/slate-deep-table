@@ -122,9 +122,6 @@ const Example = React.createClass({
     render: function() {
         let { state } = this.state;
         let isTable = tablePlugin.utils.isSelectionInTable(state);
-        window.getJSON = () => console.log(
-            JSON.stringify(Slate.Raw.serialize(state, {terse:true}),null,2)
-        )
 
         return (
             <div>

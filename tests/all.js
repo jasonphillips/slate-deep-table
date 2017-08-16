@@ -6,7 +6,7 @@ const readMetadata = require('read-metadata');
 
 const EditList = require('../lib');
 
-describe('slate-edit-list', function() {
+describe('slate-deep-table', function() {
     const tests = fs.readdirSync(__dirname);
     const plugin = EditList();
 

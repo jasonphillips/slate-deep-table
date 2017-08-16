@@ -1,33 +1,34 @@
-
 nodes:
   - kind: block
     type: table
-    data:
-        align:
-            - left
-            - left
-            - left
     nodes:
-      # Row 1
       - kind: block
         type: table_row
         nodes:
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Row 1, Col 1"
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Row 1, Col 1'
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Row 1, Col 2"
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Row 1, Col 2'
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Row 1, Col 3"
-      # Row 2
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Row 1, Col 3'
       - kind: block
         type: table_row
         nodes:
@@ -35,19 +36,27 @@ nodes:
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: ""
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: ''
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: ""
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: ''
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: ""
-      # Row 3
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: ''
       - kind: block
         type: table_row
         nodes:
@@ -55,15 +64,24 @@ nodes:
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: ""
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: ''
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Row 3, Col 1"
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Row 3, Col 1'
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Row 3, Col 3"
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Row 3, Col 3'

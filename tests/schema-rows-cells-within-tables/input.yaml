@@ -4,8 +4,11 @@ nodes:
   - kind: block
     type: table_row
     nodes:
-      - kind: text
-        text: "No rows"
+      - kind: block
+        type: table_cell
+        nodes:
+          - kind: text
+            text: "No table"
 
   # A cell without surrounding tr gets inserted within a table, and within a tr
   - kind: block

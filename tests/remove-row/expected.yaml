@@ -1,4 +1,3 @@
-
 nodes:
   - kind: block
     type: table
@@ -9,33 +8,51 @@ nodes:
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Col 0, Row 0"
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Col 0, Row 0'
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Col 1, Row 0"
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Col 1, Row 0'
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Col 2, Row 0"
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Col 2, Row 0'
       - kind: block
         type: table_row
         nodes:
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Col 0, Row 2"
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Col 0, Row 2'
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Col 1, Row 2"
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Col 1, Row 2'
           - kind: block
             type: table_cell
             nodes:
-              - kind: text
-                text: "Col 2, Row 2"
+              - kind: block
+                type: paragraph
+                nodes:
+                  - kind: text
+                    text: 'Col 2, Row 2'

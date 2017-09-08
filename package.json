@@ -29,7 +29,7 @@
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "read-metadata": "^1.0.0",
-    "slate": "^0.21.2",
+    "slate": "^0.22.0",
     "watchify": "^3.7.0"
   },
   "scripts": {

@@ -25,27 +25,13 @@ npm install slate-deep-table
 import EditTable from 'slate-deep-table'
 
 const plugins = [
-  EditTable()
+  EditTable({ /* options here */ })
 ]
+
+// then use as plugins prop on your slate Editor
 ```
 
-If you wish to easily include default rendering functions, call `utils.getDefaultRenderers()` and merge the results into the schema object you will pass to your editor instance.
-
-```js
-const schema = {
-    nodes: {
-        // your types here
-        paragraph:  props => <p {...props.attributes}>{props.children}</p>,
-        heading:    props => <h1 {...props.attributes}>{props.children}</h1>,
-        subheading: props => <h2 {...props.attributes}>{props.children}</h2>,
-    }
-};
-
-// add default renderers for the types used by this plugin
-Object.assign(schema.nodes, tablePlugin.utils.getDefaultRenderers());
-```
-
-#### Arguments
+#### Options
 
 - ``[typeTable: String]`` — type for table
 - ``[typeRow: String]`` — type for the rows.

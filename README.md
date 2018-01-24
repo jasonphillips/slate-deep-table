@@ -48,12 +48,6 @@ const plugins = [
 
 Return true if selection is inside a table.
 
-#### `utils.getDefaultRenderers`
-
-`plugin.utils.getDefaultRenderers() => Object`
-
-Returns default rendering functions to easily incorporate into your schema; see example.
-
 #### `changes.insertTable`
 
 `plugin.changes.insertTable(change: Change, columns: Number?, rows: Number?) => Change`

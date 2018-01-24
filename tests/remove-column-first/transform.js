@@ -1,8 +1,8 @@
-module.exports = function(plugin, state) {
-    const cursorBlock = state.document.getDescendant('_cursor_');
-    const transform = state.transform();
-    state = transform.moveToRangeOf(cursorBlock).apply();
+module.exports = function(plugin, value) {
+    const cursorBlock = value.document.getDescendant('_cursor_');
 
-    return plugin.transforms.removeColumn(state.transform())
-        .apply();
+    return value.change()
+        .moveToRangeOf(cursorBlock)
+        .call(plugin.changes.removeColumn)
+        .value;
 };

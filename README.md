@@ -25,36 +25,22 @@ npm install slate-deep-table
 import EditTable from 'slate-deep-table'
 
 const plugins = [
-  EditTable()
+  EditTable({ /* options here */ })
 ]
+
+// then use as plugins prop on your slate Editor
 ```
 
-If you wish to easily include default rendering functions, call `utils.getDefaultRenderers()` and merge the results into the schema object you will pass to your editor instance.
-
-```js
-const schema = {
-    nodes: {
-        // your types here
-        paragraph:  props => <p {...props.attributes}>{props.children}</p>,
-        heading:    props => <h1 {...props.attributes}>{props.children}</h1>,
-        subheading: props => <h2 {...props.attributes}>{props.children}</h2>,
-    }
-};
-
-// add default renderers for the types used by this plugin
-Object.assign(schema.nodes, tablePlugin.utils.getDefaultRenderers());
-```
-
-#### Arguments
+#### Options
 
 - ``[typeTable: String]`` — type for table
 - ``[typeRow: String]`` — type for the rows.
 - ``[typeCell: String]`` — type for the cells.
 - ``[typeContent: String]`` — type for the default blocks within cells.
 
-### Utilities and Transform
+### Utilities and Change
 
-`slate-deep-table` exports utilities and transforms:
+`slate-deep-table` exports utilities and changes:
 
 #### `utils.isSelectionInTable`
 
@@ -62,63 +48,57 @@ Object.assign(schema.nodes, tablePlugin.utils.getDefaultRenderers());
 
 Return true if selection is inside a table.
 
-#### `utils.getDefaultRenderers`
+#### `changes.insertTable`
 
-`plugin.utils.getDefaultRenderers() => Object`
-
-Returns default rendering functions to easily incorporate into your schema; see example.
-
-#### `transforms.insertTable`
-
-`plugin.transforms.insertTable(transform: Transform, columns: Number?, rows: Number?) => Transform`
+`plugin.changes.insertTable(change: Change, columns: Number?, rows: Number?) => Change`
 
 Insert a new empty table.
 
-#### `transforms.insertRow`
+#### `changes.insertRow`
 
-`plugin.transforms.insertRow(transform: Transform, at: Number?) => Transform`
+`plugin.changes.insertRow(change: Change, at: Number?) => Change`
 
 Insert a new row after the current one or at the specific index (`at`).
 
-#### `transforms.insertColumn`
+#### `changes.insertColumn`
 
-`plugin.transforms.insertColumn(transform: Transform, at: Number?) => Transform`
+`plugin.changes.insertColumn(change: Change, at: Number?) => Change`
 
 Insert a new column after the current one or at the specific index (`at`).
 
-#### `transforms.removeTable`
+#### `changes.removeTable`
 
-`plugin.transforms.removeTable(transform: Transform) => Transform`
+`plugin.changes.removeTable(change: Change) => Change`
 
 Remove current table.
 
-#### `transforms.removeRow`
+#### `changes.removeRow`
 
-`plugin.transforms.removeRow(transform: Transform, at: Number?) => Transform`
+`plugin.changes.removeRow(change: Change, at: Number?) => Change`
 
 Remove current row or the one at a specific index (`at`).
 
-#### `transforms.removeColumn`
+#### `changes.removeColumn`
 
-`plugin.transforms.removeColumn(transform: Transform, at: Number?) => Transform`
+`plugin.changes.removeColumn(change: Change, at: Number?) => Change`
 
 Remove current column or the one at a specific index (`at`).
 
-#### `transforms.moveSelection`
+#### `changes.moveSelection`
 
-`plugin.transforms.moveSelection(transform: Transform, column: Number, row: Number) => Transform`
+`plugin.changes.moveSelection(change: Change, column: Number, row: Number) => Change`
 
 Move the selection to a specific position in the table.
 
-#### `transforms.moveSelectionBy`
+#### `changes.moveSelectionBy`
 
-`plugin.transforms.moveSelectionBy(transform: Transform, column: Number, row: Number) => Transform`
+`plugin.changes.moveSelectionBy(change: Change, column: Number, row: Number) => Change`
 
 Move the selection by the given amount of columns and rows.
 
-#### `transforms.toggleHeaders`
+#### `changes.toggleHeaders`
 
-`plugin.transforms.toggleHeaders(transform: Transform) => Transform`
+`plugin.changes.toggleHeaders(change: Change) => Change`
 
 Toggles whether the table will render the first row as a header row (within a thead) or as a regular row.
 

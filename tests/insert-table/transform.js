@@ -1,11 +1,9 @@
-module.exports = function(plugin, state) {
-    const cursorBlock = state.document.getDescendant('_cursor_');
-    const transform = state.transform();
-    state = transform
+module.exports = function(plugin, value) {
+    const cursorBlock = value.document.getDescendant('_cursor_');
+
+    return value.change()
         .moveToRangeOf(cursorBlock)
         .move(6) // Cursor here: Before|After
-        .apply();
-
-    return plugin.transforms.insertTable(state.transform())
-        .apply();
+        .call(plugin.changes.insertTable)
+        .value;
 };

@@ -1,20 +1,21 @@
 const expect = require('expect');
 
-module.exports = function(plugin, state) {
-    const cursorBlock = state.document.getDescendant('_cursor_');
-    const transform = state.transform();
-
-    state = transform
+module.exports = function(plugin, value) {
+    const cursorBlock = value.document.getDescendant('_cursor_');
+    
+    const initial = value.change({ save: false })
         .moveToRangeOf(cursorBlock)
-        .move(6) // Cursor here: Before|After
-        .apply();
+        .move(6)
+        .value;
 
-    state = plugin.transforms.insertTable(state.transform()).apply();
+    value = initial.change()
+        .call(plugin.changes.insertTable)
+        .value;
 
-    state = state.transform().undo().apply();
+    value = value.change().undo().value;
 
     // Back to previous cursor position
-    expect(state.startBlock.text).toEqual('BeforeAfter');
+    expect(value.startBlock.text).toEqual('BeforeAfter');
 
-    return state;
+    return value;
 };

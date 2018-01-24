@@ -1,21 +1,23 @@
 {
   "name": "slate-deep-table",
   "description": "A Slate plugin to handle tables containing complex content.",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "license": "Apache-2.0",
   "repository": "git://github.com/jasonphillips/slate-deep-table.git",
   "main": "./dist/index.js",
   "dependencies": {
-    "immutable": "^3.8.1"
+    "immutable": "^3.8.1",
+    "slate-html-serializer": "^0.5.1"
   },
   "peerDependencies": {
-    "slate": "0.x.x",
-    "react": "^0.14.0 || ^15.0.0",
-    "react-dom": "^0.14.0 || ^15.0.0"
+    "react": "^0.14.0 || ^15.0.0 || ^16.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0 || ^16.0.0",
+    "slate": "0.32.x"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "^6.11.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
@@ -28,16 +30,17 @@
     "mocha": "^3.0.1",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "read-metadata": "^1.0.0",
-    "slate": "^0.21.2",
+    "slate": "^0.32.0",
+    "slate-hyperscript": "^0.5.1",
+    "slate-react": "^0.11.1",
     "watchify": "^3.7.0"
   },
   "scripts": {
     "prepublish": "babel ./lib --out-dir ./dist",
     "postpublish": "npm run deploy-example",
     "lint": "eslint ./",
-    "build-example": "browserify ./example/main.js -o ./example/bundle.js -t [ babelify --presets [ es2015 react ] ]",
-    "watch-example": "watchify ./example/main.js -o ./example/bundle.js -t [ babelify --presets [ es2015 react ] ] -v",
+    "build-example": "browserify ./example/main.js -o ./example/bundle.js -t [ babelify --presets [ es2015 react ]  --plugins transform-class-properties ] ",
+    "watch-example": "watchify ./example/main.js -o ./example/bundle.js  -t [ babelify --presets [ es2015 react ] --plugins transform-class-properties ] ",
     "serve-example": "http-server ./example/ -p 8080",
     "start": "npm run build-example; npm run serve-example",
     "deploy-example": "npm run build-example; gh-pages -d ./example",

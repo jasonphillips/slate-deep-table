@@ -1,23 +1,19 @@
 const expect = require('expect');
 
-module.exports = function(plugin, state) {
-    const cursorBlock = state.document.getDescendant('_cursor_');
+module.exports = function(plugin, value) {
+    const cursorBlock = value.document.getDescendant('_cursor_');
     const offset = 2;
-    const transform = state.transform();
-    state = transform
+    const change = value.change()
         .moveToRangeOf(cursorBlock)
         .move(offset)
-        .apply();
+        .call(plugin.changes.moveSelection, 2, 2)
+        .value;
 
-    state = plugin.transforms
-        .moveSelection(state.transform(), 2, 2)
-        .apply();
-
-    expect(state.startBlock.text).toEqual('Col 2, Row 2');
-    const selection = state.selection;
+    expect(change.startBlock.text).toEqual('Col 2, Row 2');
+    const selection = change.selection;
     expect(selection.startKey).toEqual(selection.endKey);
     // Keep same offset
     expect(selection.startOffset).toEqual(offset);
 
-    return state;
+    return change;
 };

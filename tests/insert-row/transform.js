@@ -1,8 +1,8 @@
-module.exports = function(plugin, state) {
-    const cursorBlock = state.document.getDescendant('_cursor_');
-    const transform = state.transform();
-    state = transform.moveToRangeOf(cursorBlock).apply();
-
-    return plugin.transforms.insertRow(state.transform())
-        .apply();
+module.exports = function(plugin, value) {
+    const cursorBlock = value.document.getDescendant('_cursor_');
+    
+    return value.change()
+        .moveToRangeOf(cursorBlock)
+        .call(plugin.changes.insertRow)
+        .value;
 };

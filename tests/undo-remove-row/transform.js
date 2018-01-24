@@ -1,13 +1,13 @@
+module.exports = function(plugin, value) {
+    const cursorBlock = value.document.getDescendant('_cursor_');
+    
+    const initial = value.change({ save: false })
+        .moveToRangeOf(cursorBlock)
+        .value;
 
-module.exports = function(plugin, state) {
-    const cursorBlock = state.document.getDescendant('_cursor_');
-    const transform = state.transform();
+    value = initial.change()
+        .call(plugin.changes.removeRow)
+        .value;
 
-    state = transform.moveToRangeOf(cursorBlock).apply();
-
-    state = plugin.transforms.removeRow(state.transform()).apply();
-
-    state = state.transform().undo().apply();
-
-    return state;
+    return value.change().undo().value;
 };

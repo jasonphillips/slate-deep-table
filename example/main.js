@@ -1,111 +1,100 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 const Slate = require('slate');
+const SlateReact = require('slate-react');
+const { Editor } = SlateReact;
 const PluginEditTable = require('../lib/');
-
-const stateJson = require('./state');
+const initialValue = require('./value.js');
 
 const tablePlugin = PluginEditTable();
 const plugins = [
     tablePlugin
 ];
 
-const schema = {
-    nodes: {
-        paragraph:  props => <p {...props.attributes}>{props.children}</p>,
-        heading:    props => <h1 {...props.attributes}>{props.children}</h1>,
-        subheading: props => <h2 {...props.attributes}>{props.children}</h2>,
+const renderNode = (props) => {
+    switch (props.node.type) {
+        case 'paragraph':  return <p {...props.attributes}>{props.children}</p>;
+        case 'heading':    return <h1 {...props.attributes}>{props.children}</h1>;
+        case 'subheading': return <h2 {...props.attributes}>{props.children}</h2>;
     }
 };
 
-Object.assign(schema.nodes, tablePlugin.utils.getDefaultRenderers());
 
+class Example extends React.Component {
+    constructor (props) {
+        super(props);
+        this.state = { value: initialValue };
+    }
 
-const Example = React.createClass({
-    getInitialState: function() {
-        return {
-            state: Slate.Raw.deserialize(stateJson, { terse: true })
-        };
-    },
+    onChange = ({value}) => {
+        this.setState({value});
+    }
 
-    onChange: function(state) {
-        this.setState({
-            state: state
-        });
-    },
-
-    onInsertTable: function() {
-        let { state } = this.state;
+    onInsertTable = () => {
+        const { value } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.insertTable(state.transform())
-                .apply()
+            value.change().call(tablePlugin.changes.insertTable)
         );
-    },
+    }
 
-    onInsertColumn: function() {
-        let { state } = this.state;
+    onInsertColumn = () => {
+        const { value } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.insertColumn(state.transform())
-                .apply()
+            value.change().call(tablePlugin.changes.insertColumn)
         );
-    },
+    }
 
-    onInsertRow: function() {
-        let { state } = this.state;
+    onInsertRow = () => {
+        const { value } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.insertRow(state.transform())
-                .apply()
+            value.change().call(tablePlugin.changes.insertRow)
         );
-    },
+    }
 
-    onRemoveColumn: function() {
-        let { state } = this.state;
+    onRemoveColumn = () => {
+        const { value } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.removeColumn(state.transform())
-                .apply()
+            value.change().call(tablePlugin.changes.removeColumn)
         );
-    },
+    }
 
-    onRemoveRow: function() {
-        let { state } = this.state;
+    onRemoveRow= () => {
+        const { value } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.removeRow(state.transform())
-                .apply()
+            value.change().call(tablePlugin.changes.removeRow)
         );
-    },
+    }
 
-    onRemoveTable: function() {
-        let { state } = this.state;
+    onRemoveTable = () => {
+        const { value } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.removeTable(state.transform())
-                .apply()
+            value.change().call(tablePlugin.changes.removeTable)
         );
-    },
+    }
 
-    onToggleHeaders: function() {
-        let { state } = this.state;
+    onToggleHeaders = () => {
+        const { value } = this.state;
 
         this.onChange(
-            tablePlugin.transforms.toggleHeaders(state.transform())
-                .apply()
+            value.change().call(tablePlugin.changes.toggleHeaders)
         );
-    },
+    }
 
-    renderNormalToolbar: function() {
+    renderNormalToolbar = () => {
         return (
             <div className="buttons">
                 <button onClick={this.onInsertTable}>Insert Table</button>
             </div>
         );
-    },
+    }
 
-    renderTableToolbar: function() {
+    renderTableToolbar = () => {
         return (
             <div className="buttons">
                 <button onClick={this.onInsertTable}>Insert Table</button>
@@ -117,26 +106,27 @@ const Example = React.createClass({
                 <button onClick={this.onToggleHeaders}>Toggle Headers</button>
             </div>
         );
-    },
+    }
 
-    render: function() {
-        let { state } = this.state;
-        let isTable = tablePlugin.utils.isSelectionInTable(state);
+    render() {
+        const { value } = this.state;
+        if (!value) console.log('val!!!', this.state)
+        const isTable = tablePlugin.utils.isSelectionInTable(value);
 
         return (
             <div>
                 {isTable? this.renderTableToolbar() : this.renderNormalToolbar()}
-                <Slate.Editor
+                <Editor
                     placeholder={'Enter some text...'}
                     plugins={plugins}
-                    state={state}
+                    value={value}
                     onChange={this.onChange}
-                    schema={schema}
+                    renderNode={renderNode}
                 />
             </div>
         );
     }
-});
+}
 
 ReactDOM.render(
     <Example />,

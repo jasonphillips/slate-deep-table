@@ -19,7 +19,7 @@ const value = (
             <p>Col 0, Row 1</p>
           </td>
           <td>
-            <p key="_cursor_">Col 1, Row 1</p>
+            <p><cursor />Col 1, Row 1</p>
           </td>
         </tr>
         <tr>

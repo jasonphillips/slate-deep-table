@@ -8,9 +8,23 @@ const toHtml = new Html({
                 if (obj.object == 'block') {
                     switch (obj.type) {
                         case 'table': 
-                            return obj.data.get('headless')
-                                ? <table data={{headless: true}}>{children}</table>
-                                : <table>{children}</table>;
+                            const headers = !obj.data.get('headless');
+                            const rows = children;
+                            const split = (!headers || !rows || !rows.size || rows.size===1)
+                                ?  { header: null, rows: rows }
+                                : {
+                                    header: rows.get(0),
+                                    rows: rows.slice(1),
+                                 }
+
+                            return (
+                                <table>
+                                    {headers && 
+                                        <thead>{split.header}</thead>
+                                    }
+                                    <tbody>{split.rows}</tbody>
+                                </table>
+                            );
                         case 'table_row': return <tr>{children}</tr>;
                         case 'table_cell': return <td>{children}</td>;
                         case 'paragraph': return <p>{children}</p>;

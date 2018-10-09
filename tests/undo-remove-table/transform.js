@@ -1,17 +1,11 @@
 const expect = require('expect');
 
-module.exports = function(plugin, value) {
-    const cursorBlock = value.document.getDescendant('_cursor_');
+module.exports = function(plugin, editor) {
+    const cursorBlock = editor.value.document.getDescendant('_cursor_');
 
-    const initial = value.change({ save: false })
+    return editor
+        .command(plugin.changes.removeTable)
         .moveToRangeOfNode(cursorBlock)
+        .undo()
         .value;
-
-    value = initial.change()
-        .call(plugin.changes.removeTable)
-        .value;
-
-    value = value.change().undo().value;
-
-    return value;
 };

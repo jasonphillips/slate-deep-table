@@ -1,12 +1,12 @@
 const expect = require('expect');
 
-module.exports = function(plugin, value) {
+module.exports = function(plugin, editor) {
 
-    value = value.change()
-        .call(plugin.changes.insertColumn)
+    let value = editor
+        .command(plugin.changes.insertColumn)
         .value;
 
-    value = value.change().undo().value;
+    value = editor.undo().value;
 
     // Back to previous cursor position
     expect(value.startBlock.text).toEqual('Col 1, Row 1');

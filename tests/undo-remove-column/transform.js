@@ -1,13 +1,9 @@
-module.exports = function(plugin, value) {
-    const cursorBlock = value.document.getDescendant('_cursor_');
+module.exports = function(plugin, editor) {
+    const cursorBlock = editor.value.document.getDescendant('_cursor_');
 
-    const initial = value.change({ save: false })
+    return editor
         .moveToRangeOfNode(cursorBlock)
+        .command(plugin.changes.removeColumn)
+        .undo()
         .value;
-
-    value = initial.change()
-        .call(plugin.changes.removeColumn)
-        .value;
-
-    return value.change().undo().value;
 };

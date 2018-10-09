@@ -1,18 +1,14 @@
 const expect = require('expect');
 
-module.exports = function(plugin, value) {
-    const cursorBlock = value.document.getDescendant('_cursor_');
+module.exports = function(plugin, editor) {
+    const cursorBlock = editor.value.document.getDescendant('_cursor_');
 
-    const initial = value.change({ save: false })
-        .moveToRangeOfNode(cursorBlock)
+    const value = editor
+    .   moveToRangeOfNode(cursorBlock)
         .moveForward(6)
+        .command(plugin.changes.insertTable)
+        .undo()
         .value;
-
-    value = initial.change()
-        .call(plugin.changes.insertTable)
-        .value;
-
-    value = value.change().undo().value;
 
     // Back to previous cursor position
     expect(value.startBlock.text).toEqual('BeforeAfter');

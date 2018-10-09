@@ -8,13 +8,13 @@ const value = (
       <table>
         <tr>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
         </tr>
       </table>

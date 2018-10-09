@@ -1,8 +1,7 @@
-module.exports = function(plugin, value) {
-    const cursorBlock = value.document.getDescendant('_cursor_');
-
-    return value.change()
+module.exports = function(plugin, editor) {
+    const cursorBlock = editor.value.document.getDescendant('_cursor_');
+    return editor
         .moveToRangeOfNode(cursorBlock)
-        .call(plugin.changes.insertRow)
+        .command(plugin.changes.insertRow)
         .value;
 };

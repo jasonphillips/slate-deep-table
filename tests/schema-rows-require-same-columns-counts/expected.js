@@ -19,10 +19,10 @@ const value = (
         </tr>
         <tr>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
           <td>
             <p>There is only one column here</p>
@@ -30,7 +30,7 @@ const value = (
         </tr>
         <tr>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
           <td>
             <p>Col 1, Row 3</p>

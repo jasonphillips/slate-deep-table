@@ -1,6 +1,6 @@
 /** @jsx h */
 
-import h from '../hyperscript';
+import h from './hyperscript';
 
 const value = (
   <value>
@@ -13,9 +13,6 @@ const value = (
           <td>
             <p>Col 1, Row 0</p>
           </td>
-          <td>
-            <p><text /></p>
-          </td>
         </tr>
         <tr>
           <td>
@@ -24,9 +21,6 @@ const value = (
           <td>
             <p>Col 1, Row 1</p>
           </td>
-          <td>
-            <p><text /></p>
-          </td>
         </tr>
         <tr>
           <td>
@@ -34,9 +28,6 @@ const value = (
           </td>
           <td>
             <p>Col 1, Row 2</p>
-          </td>
-          <td>
-            <p><text /></p>
           </td>
         </tr>
       </table>

@@ -8,17 +8,17 @@ const value = (
       <table>
         <tr>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
         </tr>
         <tr>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
         </tr>
         <tr>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
         </tr>
       </table>

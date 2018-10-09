@@ -31,8 +31,8 @@
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "slate": "^0.41.1",
-    "slate-hyperscript": "^0.5.1",
-    "slate-react": "^0.11.1",
+    "slate-hyperscript": "^0.10.0",
+    "slate-react": "^0.18.10",
     "watchify": "^3.7.0"
   },
   "scripts": {

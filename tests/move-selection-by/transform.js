@@ -5,16 +5,17 @@ module.exports = function(plugin, value) {
     const offset = 2;
 
     value = value.change()
-        .moveToRangeOf(cursorBlock)
-        .move(offset)
+        .moveToRangeOfNode(cursorBlock)
+        .moveForward(offset)
         .call(plugin.changes.moveSelectionBy, -1, -1)
         .value;
 
     expect(value.startBlock.text).toEqual('Col 0, Row 0');
     const selection = value.selection;
-    expect(selection.startKey).toEqual(selection.endKey);
+    expect(selection.start.key).toEqual(selection.end.key);
     // Keep same offset
-    expect(selection.startOffset).toEqual(offset);
+    expect(selection.start.offset).toEqual(offset);
+
 
     return value;
 };

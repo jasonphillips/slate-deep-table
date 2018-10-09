@@ -2,10 +2,10 @@ const expect = require('expect');
 
 module.exports = function(plugin, value) {
     const cursorBlock = value.document.getDescendant('_cursor_');
-    
+
     const initial = value.change({ save: false })
-        .moveToRangeOf(cursorBlock)
-        .move(6)
+        .moveToRangeOfNode(cursorBlock)
+        .moveForward(6)
         .value;
 
     value = initial.change()

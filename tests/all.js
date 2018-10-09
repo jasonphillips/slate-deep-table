@@ -5,6 +5,10 @@ const Slate = require('slate');
 const { Value } = Slate;
 const DeepTable = require('../lib');
 
+// a basic table for serialize test
+const basicTable = require('./basicTableInput').default;
+const serialize = require('./serialize');
+
 describe('slate-deep-table', function() {
     const tests = fs.readdirSync(__dirname);
     const plugin = DeepTable();
@@ -27,4 +31,40 @@ describe('slate-deep-table', function() {
             expect(actual.toJSON()).toEqual(expected.toJSON());
         });
     });
+
+    it('can serialize with tbody, thead', function () {
+        const serialized = serialize(basicTable);
+        expect(serialized).toEqual(
+           `<table>
+                <thead>
+                    <tr>
+                        <td>
+                            <p>Col 0, Row 0</p>
+                        </td>
+                        <td>
+                            <p>Col 1, Row 0</p>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <p>Col 0, Row 1</p>
+                        </td>
+                        <td>
+                            <p>Col 1, Row 1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Col 0, Row 2</p>
+                        </td>
+                        <td>
+                            <p>Col 1, Row 2</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>`
+        .split('\n').map(line => line.trim()).join(''))
+    })
 });

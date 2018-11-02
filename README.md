@@ -39,10 +39,10 @@ const plugins = [
 
 #### Options
 
-- ``[typeTable: String]` (default value: 'table')` — type for table
-- ``[typeRow: String]` (default value: 'table_row')` — type for the rows.
-- ``[typeCell: String]` (default value: 'table_cell')` — type for the cells.
-- ``[typeContent: String]` (default value: 'paragraph')` — type for the default blocks within cells.
+- `[typeTable: String]` — type for table `default: 'table'`
+- `[typeRow: String]` — type for the rows `default: 'table_row'`
+- `[typeCell: String]` — type for the cells `default: 'table_cell'`
+- `[typeContent: String]` — type for the default blocks within cells `default: 'paragraph'`
 
 ### Queries and Commands
 

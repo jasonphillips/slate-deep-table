@@ -3,20 +3,20 @@ const ReactDOM = require('react-dom');
 const Slate = require('slate');
 const SlateReact = require('slate-react');
 const { Editor } = SlateReact;
-const PluginEditTable = require('../lib/');
+const PluginDeepTable = require('../lib/');
 const initialValue = require('./value.js');
 
-const tablePlugin = PluginEditTable();
 const plugins = [
-    tablePlugin
+    PluginDeepTable()
 ];
 
-const renderNode = (props) => {
+const renderNode = (props, editor, next) => {
     switch (props.node.type) {
         case 'paragraph':  return <p {...props.attributes}>{props.children}</p>;
         case 'heading':    return <h1 {...props.attributes}>{props.children}</h1>;
         case 'subheading': return <h2 {...props.attributes}>{props.children}</h2>;
     }
+    return next();
 };
 
 
@@ -24,65 +24,52 @@ class Example extends React.Component {
     constructor (props) {
         super(props);
         this.state = { value: initialValue };
+        this.editor = null;
     }
 
-    onChange = ({value}) => {
-        this.setState({value});
+    onChange = ({ value }) => {
+        this.setState({ value });
     }
 
     onInsertTable = () => {
-        const { value } = this.state;
-
         this.onChange(
-            value.change().call(tablePlugin.changes.insertTable)
+            this.editor.insertTable()
         );
     }
 
     onInsertColumn = () => {
-        const { value } = this.state;
-
         this.onChange(
-            value.change().call(tablePlugin.changes.insertColumn)
+            this.editor.insertColumn()
         );
     }
 
     onInsertRow = () => {
-        const { value } = this.state;
-
         this.onChange(
-            value.change().call(tablePlugin.changes.insertRow)
+            this.editor.insertRow()
         );
     }
 
     onRemoveColumn = () => {
-        const { value } = this.state;
-
         this.onChange(
-            value.change().call(tablePlugin.changes.removeColumn)
+            this.editor.removeColumn()
         );
     }
 
     onRemoveRow= () => {
-        const { value } = this.state;
-
         this.onChange(
-            value.change().call(tablePlugin.changes.removeRow)
+            this.editor.removeRow()
         );
     }
 
     onRemoveTable = () => {
-        const { value } = this.state;
-
         this.onChange(
-            value.change().call(tablePlugin.changes.removeTable)
+            this.editor.removeTable()
         );
     }
 
     onToggleHeaders = () => {
-        const { value } = this.state;
-
         this.onChange(
-            value.change().call(tablePlugin.changes.toggleHeaders)
+            this.editor.toggleTableHeaders()
         );
     }
 
@@ -110,8 +97,7 @@ class Example extends React.Component {
 
     render() {
         const { value } = this.state;
-        if (!value) console.log('val!!!', this.state)
-        const isTable = tablePlugin.utils.isSelectionInTable(value);
+        const isTable = this.editor && this.editor.isSelectionInTable(value);
 
         return (
             <div>
@@ -120,6 +106,7 @@ class Example extends React.Component {
                     placeholder={'Enter some text...'}
                     plugins={plugins}
                     value={value}
+                    ref={editor => this.editor = editor}
                     onChange={this.onChange}
                     renderNode={renderNode}
                 />

@@ -3,7 +3,7 @@ const expect = require('expect');
 module.exports = function(plugin, editor) {
     const cursorBlock = editor.value.document.getDescendant('_cursor_');
     const offset = 2;
-    const change = editor
+    const value = editor
         .moveToRangeOfNode(cursorBlock)
         .moveForward(offset)
         .command(plugin.changes.moveSelection, 2, 2)
@@ -15,5 +15,5 @@ module.exports = function(plugin, editor) {
     // Keep same offset
     expect(selection.start.offset).toEqual(offset);
 
-    return change;
+    return value;
 };

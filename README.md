@@ -50,55 +50,55 @@ Return true if selection is inside a table.
 
 #### `changes.insertTable`
 
-`plugin.changes.insertTable(change: Change, columns: Number?, rows: Number?) => Change`
+`plugin.changes.insertTable(editor: Editor, columns: Number?, rows: Number?) => Change`
 
 Insert a new empty table.
 
 #### `changes.insertRow`
 
-`plugin.changes.insertRow(change: Change, at: Number?) => Change`
+`plugin.changes.insertRow(editor: Editor, at: Number?) => Change`
 
 Insert a new row after the current one or at the specific index (`at`).
 
 #### `changes.insertColumn`
 
-`plugin.changes.insertColumn(change: Change, at: Number?) => Change`
+`plugin.changes.insertColumn(editor: Editor, at: Number?) => Change`
 
 Insert a new column after the current one or at the specific index (`at`).
 
 #### `changes.removeTable`
 
-`plugin.changes.removeTable(change: Change) => Change`
+`plugin.changes.removeTable(editor: Editor) => Change`
 
 Remove current table.
 
 #### `changes.removeRow`
 
-`plugin.changes.removeRow(change: Change, at: Number?) => Change`
+`plugin.changes.removeRow(editor: Editor, at: Number?) => Change`
 
 Remove current row or the one at a specific index (`at`).
 
 #### `changes.removeColumn`
 
-`plugin.changes.removeColumn(change: Change, at: Number?) => Change`
+`plugin.changes.removeColumn(editor: Editor, at: Number?) => Change`
 
 Remove current column or the one at a specific index (`at`).
 
 #### `changes.moveSelection`
 
-`plugin.changes.moveSelection(change: Change, column: Number, row: Number) => Change`
+`plugin.changes.moveSelection(editor: Editor, column: Number, row: Number) => Change`
 
 Move the selection to a specific position in the table.
 
 #### `changes.moveSelectionBy`
 
-`plugin.changes.moveSelectionBy(change: Change, column: Number, row: Number) => Change`
+`plugin.changes.moveSelectionBy(editor: Editor, column: Number, row: Number) => Change`
 
 Move the selection by the given amount of columns and rows.
 
 #### `changes.toggleHeaders`
 
-`plugin.changes.toggleHeaders(change: Change) => Change`
+`plugin.changes.toggleHeaders(editor: Editor) => Change`
 
 Toggles whether the table will render the first row as a header row (within a thead) or as a regular row.
 

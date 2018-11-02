@@ -3,12 +3,11 @@ const ReactDOM = require('react-dom');
 const Slate = require('slate');
 const SlateReact = require('slate-react');
 const { Editor } = SlateReact;
-const PluginEditTable = require('../lib/');
+const PluginDeepTable = require('../lib/');
 const initialValue = require('./value.js');
 
-const tablePlugin = PluginEditTable();
 const plugins = [
-    tablePlugin
+    PluginDeepTable()
 ];
 
 const renderNode = (props, editor, next) => {
@@ -34,43 +33,43 @@ class Example extends React.Component {
 
     onInsertTable = () => {
         this.onChange(
-            this.editor.command(tablePlugin.changes.insertTable)
+            this.editor.insertTable()
         );
     }
 
     onInsertColumn = () => {
         this.onChange(
-            this.editor.command(tablePlugin.changes.insertColumn)
+            this.editor.insertColumn()
         );
     }
 
     onInsertRow = () => {
         this.onChange(
-            this.editor.command(tablePlugin.changes.insertRow)
+            this.editor.insertRow()
         );
     }
 
     onRemoveColumn = () => {
         this.onChange(
-            this.editor.command(tablePlugin.changes.removeColumn)
+            this.editor.removeColumn()
         );
     }
 
     onRemoveRow= () => {
         this.onChange(
-            this.editor.command(tablePlugin.changes.removeRow)
+            this.editor.removeRow()
         );
     }
 
     onRemoveTable = () => {
         this.onChange(
-            this.editor.command(tablePlugin.changes.removeTable)
+            this.editor.removeTable()
         );
     }
 
     onToggleHeaders = () => {
         this.onChange(
-            this.editor.command(tablePlugin.changes.toggleHeaders)
+            this.editor.toggleTableHeaders()
         );
     }
 
@@ -98,8 +97,7 @@ class Example extends React.Component {
 
     render() {
         const { value } = this.state;
-        if (!value) console.log('val!!!', this.state)
-        const isTable = tablePlugin.utils.isSelectionInTable(value);
+        const isTable = this.editor && this.editor.isSelectionInTable(value);
 
         return (
             <div>

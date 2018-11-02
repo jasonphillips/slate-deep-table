@@ -18,87 +18,105 @@ npm install slate-deep-table
 - Pressing <kbd>Up</kbd> and <kbd>Down</kbd>, move the cursor to next/previous row
 - Pressing <kbd>Tab</kbd>, move the select to next cell
 - Pressing <kbd>Shift+Tab</kbd>, move the select to previous cell
+- Permits nested block content within table cells
+- Optionally create headerless tables
+
+### Compatibility
+
+Slate is a fast-moving library, so check the CHANGELOG for information on the currently supported version.
 
 ### Simple Usage
 
 ```js
-import EditTable from 'slate-deep-table'
+import DeepTable from 'slate-deep-table'
 
 const plugins = [
-  EditTable({ /* options here */ })
+  DeepTable({ /* options object here; see below */ })
 ]
 
-// then use as plugins prop on your slate Editor
+// now instantiate your Slate Editor with these plugins, according to slate documentation
 ```
 
 #### Options
 
-- ``[typeTable: String]`` — type for table
-- ``[typeRow: String]`` — type for the rows.
-- ``[typeCell: String]`` — type for the cells.
-- ``[typeContent: String]`` — type for the default blocks within cells.
+- ``[typeTable: String]` (default value: 'table')` — type for table
+- ``[typeRow: String]` (default value: 'table_row')` — type for the rows.
+- ``[typeCell: String]` (default value: 'table_cell')` — type for the cells.
+- ``[typeContent: String]` (default value: 'paragraph')` — type for the default blocks within cells.
 
-### Utilities and Change
+### Queries and Commands
 
-`slate-deep-table` exports utilities and changes:
+`slate-deep-table` exports queries and commands that you can invoke on your `editor` instance:
 
-#### `utils.isSelectionInTable`
+```js
+// anywhere where 'editor' is passed as an argument, or using the react Component's ref, 
+// you may directly invoke any of the exported functions below, e.g:
+const inATable = editor.isSelectionInTable();
 
-`plugin.utils.isSelectionInTable(state: State) => Boolean`
+if (!inATable) {
+  editor.insertTable();
+}
+```
 
-Return true if selection is inside a table.
+Check `example/main.js` for usage in a typical context. 
 
-#### `changes.insertTable`
+#### `query isSelectionInTable()`
 
-`plugin.changes.insertTable(editor: Editor, columns: Number?, rows: Number?) => Change`
+`editor.isSelectionInTable() => Boolean`
+
+Return true if current cursor position is inside a table.
+
+#### `command insertTable()`
+
+`editor.insertTable(columns: Number?, rows: Number?) => Editor`
 
 Insert a new empty table.
 
-#### `changes.insertRow`
+#### `command insertRow()`
 
-`plugin.changes.insertRow(editor: Editor, at: Number?) => Change`
+`editor.insertRow(at: Number?) => Editor`
 
 Insert a new row after the current one or at the specific index (`at`).
 
-#### `changes.insertColumn`
+#### `command insertColumn()`
 
-`plugin.changes.insertColumn(editor: Editor, at: Number?) => Change`
+`editor.insertColumn(at: Number?) => Editor`
 
 Insert a new column after the current one or at the specific index (`at`).
 
-#### `changes.removeTable`
+#### `command removeTable()`
 
-`plugin.changes.removeTable(editor: Editor) => Change`
+`editor.removeTable() => Editor`
 
 Remove current table.
 
-#### `changes.removeRow`
+#### `command removeRow()`
 
-`plugin.changes.removeRow(editor: Editor, at: Number?) => Change`
+`editor.removeRow(at: Number?) => Editor`
 
 Remove current row or the one at a specific index (`at`).
 
-#### `changes.removeColumn`
+#### `command removeColumn()`
 
-`plugin.changes.removeColumn(editor: Editor, at: Number?) => Change`
+`editor.removeColumn(at: Number?) => Editor`
 
 Remove current column or the one at a specific index (`at`).
 
-#### `changes.moveSelection`
+#### `command moveTableSelection()`
 
-`plugin.changes.moveSelection(editor: Editor, column: Number, row: Number) => Change`
+`editor.moveTableSelection(column: Number, row: Number) => Editor`
 
 Move the selection to a specific position in the table.
 
-#### `changes.moveSelectionBy`
+#### `command moveTableSelectionBy()`
 
-`plugin.changes.moveSelectionBy(editor: Editor, column: Number, row: Number) => Change`
+`editor.moveTableSelectionBy(column: Number, row: Number) => Editor`
 
 Move the selection by the given amount of columns and rows.
 
-#### `changes.toggleHeaders`
+#### `command toggleTableHeaders()`
 
-`plugin.changes.toggleHeaders(editor: Editor) => Change`
+`editor.toggleTableHeaders() => Editor`
 
 Toggles whether the table will render the first row as a header row (within a thead) or as a regular row.
 

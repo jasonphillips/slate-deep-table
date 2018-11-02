@@ -1,15 +1,13 @@
 const expect = require('expect');
 
-module.exports = function(plugin, editor) {
+module.exports = function(editor) {
 
-    let value = editor
-        .command(plugin.changes.insertColumn)
-        .value;
+    editor.insertColumn();
 
-    value = editor.undo().value;
+    editor.undo();
 
     // Back to previous cursor position
-    expect(value.startBlock.text).toEqual('Col 1, Row 1');
+    expect(editor.value.startBlock.text).toEqual('Col 1, Row 1');
 
-    return value;
+    return editor.value;
 };

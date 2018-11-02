@@ -1,9 +1,11 @@
-module.exports = function(plugin, editor) {
+module.exports = function(editor) {
     const cursorBlock = editor.value.document.getDescendant('_cursor_');
 
-    return editor
+    const value = editor
         .moveToRangeOfNode(cursorBlock)
-        .command(plugin.changes.removeRow)
+        .removeRow()
         .undo()
         .value;
+
+    return value;
 };

@@ -1,20 +1,13 @@
 const expect = require('expect');
 
-module.exports = function(plugin, editor) {
-    const cursorBlock = editor.value.document.getDescendant('_cursor_');
-
-    let value = editor
-        .moveToRangeOfNode(cursorBlock)
-        .command(plugin.changes.insertRow)
+module.exports = function(editor) {
+    const value = editor
+        .insertRow()
         .undo()
-        .value;
-
-    value = editor.undo().value;
+        .value
 
     // Back to previous cursor position
-
-    // TODO: fix it
-    // expect(value.startBlock.text).toEqual('Col 1, Row 1');
+    expect(value.startBlock.text).toEqual('Col 1, Row 1');
 
     return value;
 };

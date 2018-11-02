@@ -11,9 +11,7 @@ const basicTable = require('./basicTableInput').default;
 const serialize = require('./serialize');
 
 
-// a basic table for serialize test
-const basicTable = require('./basicTableInput').default;
-const serialize = require('./serialize');
+const normalizeDefault = value => (new Slate.Editor({ value })).value
 
 describe('slate-deep-table', function() {
     const tests = fs.readdirSync(__dirname);
@@ -27,15 +25,17 @@ describe('slate-deep-table', function() {
             const input = require(path.resolve(dir, 'input.js')).default;
             const expected = require(path.resolve(dir, 'expected.js')).default;
             const runTransform = require(path.resolve(dir, 'transform.js'));
-            
-            const editor = new Editor({ 
-                plugins: [plugin], 
-                value: input,
-            });
 
-            const actual = runTransform(plugin, editor);
+            // create editor instance to normalize input
+            const editor = new Slate.Editor({ value: input, plugins: [plugin] })
 
-            expect(actual.toJSON()).toEqual(expected.toJSON());
+            // normalize expected as well, but with bare slate Editor
+            const normalizedExpected = normalizeDefault(expected)
+
+            const actual = runTransform(editor);
+            //console.error(serialize(actual))
+
+            expect(actual.toJSON()).toEqual(normalizedExpected.toJSON());
         });
     });
 

@@ -2,8 +2,14 @@ const expect = require('expect');
 const fs = require('fs');
 const path = require('path');
 const Slate = require('slate');
-const { Value } = Slate;
+const { Editor } = require('slate');
 const DeepTable = require('../lib');
+const makeSchema = require('../lib/makeSchema');
+
+// a basic table for serialize test
+const basicTable = require('./basicTableInput').default;
+const serialize = require('./serialize');
+
 
 // a basic table for serialize test
 const basicTable = require('./basicTableInput').default;
@@ -22,11 +28,12 @@ describe('slate-deep-table', function() {
             const expected = require(path.resolve(dir, 'expected.js')).default;
             const runTransform = require(path.resolve(dir, 'transform.js'));
             
-            const withSchema = input.change()
-                .setValue({ schema: Slate.Schema.create({ plugins: [plugin] }) })
-                .value;
+            const editor = new Editor({ 
+                plugins: [plugin], 
+                value: input,
+            });
 
-            const actual = runTransform(plugin, withSchema);
+            const actual = runTransform(plugin, editor);
 
             expect(actual.toJSON()).toEqual(expected.toJSON());
         });

@@ -1,9 +1,9 @@
-module.exports = function(plugin, value) {
-    const cursorBlock = value.document.getDescendant('_cursor_');
+module.exports = function(plugin, editor) {
+    const cursorBlock = editor.value.document.getDescendant('_cursor_');
 
-    return value.change()
+    return editor
         .moveToRangeOfNode(cursorBlock)
         .moveForward(6) // Cursor here: Before|After
-        .call(plugin.changes.insertTable)
+        .command(plugin.changes.insertTable)
         .value;
 };

@@ -11,7 +11,7 @@ const value = (
             <p>Row 1, Col 1</p>
           </td>
           <td>
-            <p><a>Row 1, Col 2</a></p>
+            <p><text /><a>Row 1, Col 2</a><text /></p>
           </td>
           <td>
             <p>Row 1, Col 3</p>

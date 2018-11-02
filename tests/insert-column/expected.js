@@ -14,7 +14,7 @@ const value = (
             <p>Col 1, Row 0</p>
           </td>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
         </tr>
         <tr>
@@ -25,7 +25,7 @@ const value = (
             <p>Col 1, Row 1</p>
           </td>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
         </tr>
         <tr>
@@ -36,7 +36,7 @@ const value = (
             <p>Col 1, Row 2</p>
           </td>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
         </tr>
       </table>

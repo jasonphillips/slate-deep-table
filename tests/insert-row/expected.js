@@ -30,13 +30,13 @@ const value = (
         </tr>
         <tr>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
           <td>
-            <p></p>
+            <p><text /></p>
           </td>
         </tr>
       </table>

@@ -10,7 +10,7 @@ const plugins = [
     PluginDeepTable()
 ];
 
-const renderNode = (props, editor, next) => {
+const renderBlock = (props, editor, next) => {
     switch (props.node.type) {
         case 'paragraph':  return <p {...props.attributes}>{props.children}</p>;
         case 'heading':    return <h1 {...props.attributes}>{props.children}</h1>;
@@ -108,7 +108,7 @@ class Example extends React.Component {
                     value={value}
                     ref={editor => this.editor = editor}
                     onChange={this.onChange}
-                    renderNode={renderNode}
+                    renderBlock={renderBlock}
                 />
             </div>
         );

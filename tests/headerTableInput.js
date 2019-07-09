@@ -5,7 +5,7 @@ import h from './hyperscript';
 const value = (
   <value>
     <document>
-      <table headless={true}>
+      <table headless={false}>
         <tr>
           <td>
             <p>Col 0, Row 0</p>

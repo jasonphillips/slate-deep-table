@@ -16,7 +16,7 @@ const value = (
         </tr>
         <tr>
           <td>
-            <p>Col 0, Row 1</p>
+            <p key="_cursor_">Col 0, Row 1</p>
           </td>
           <td>
             <p>Col 1, Row 1</p>
@@ -31,6 +31,7 @@ const value = (
           </td>
         </tr>
       </table>
+      <p key="_cursor_2_">An extraneous paragraph</p>
     </document>
   </value>
 );

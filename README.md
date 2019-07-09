@@ -66,6 +66,21 @@ Check `example/main.js` for usage in a typical context.
 
 Return true if current cursor position is inside a table.
 
+#### `query getTablePosition()`
+
+`editor.getTablePosition() => null || TablePosition`
+
+Returns null if cursor is not in a table, else returns an object you can use to query the current cell and row location:
+
+```js
+const position = editor.getTablePosition()
+
+position.getRowIndex() // returns row id (0-indexed)
+position.getColumnIndex() // return column index (0-indexed)
+position.getWidth() // returns count of columns
+position.getHeight() // returns count of rows
+```
+
 #### `command insertTable()`
 
 `editor.insertTable(columns: Number?, rows: Number?) => Editor`

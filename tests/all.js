@@ -114,7 +114,9 @@ describe('slate-deep-table', function() {
                         </td>
                     </tr>
                 </tbody>
-            </table>`
+            </table>
+            <p>An extraneous paragraph</p>
+        `
         .split('\n').map(line => line.trim()).join(''))
     })
 
@@ -146,6 +148,7 @@ describe('slate-deep-table', function() {
                     </td>
                 </tr>
             </table>
+            <p>An extraneous paragraph</p>
         `.split('\n').map(line => line.trim()).join('');
 
         const deserialized = html.deserialize(htmlTable);
@@ -192,5 +195,28 @@ describe('slate-deep-table', function() {
         const value = new Slate.Editor({ value: deserialized, plugins: [plugin] }).value
     
         expect(value.toJSON()).toEqual(headerTable.toJSON());
+    })
+
+    it('handlers.getPosition() allows table position to be found', function () {
+        const editor = new Slate.Editor({ value: basicTable, plugins: [plugin] })
+        
+        // move to row 2, cell 1
+        const cursorBlock = editor.value.document.getDescendant('_cursor_');
+        editor.moveToRangeOfNode(cursorBlock);
+
+        // check current position
+        const tablePosition = editor.getTablePosition();
+        expect(tablePosition).toBeTruthy();
+        expect(tablePosition.getRowIndex()).toEqual(1);
+        expect(tablePosition.getColumnIndex()).toEqual(0);
+        expect(tablePosition.getWidth()).toEqual(2);
+        expect(tablePosition.getHeight()).toEqual(3);
+
+        // move outside table, expect null result
+        const cursorBlockTwo = editor.value.document.getDescendant('_cursor_2_');
+        editor.moveToRangeOfNode(cursorBlockTwo);
+
+        const tablePositionTwo = editor.getTablePosition();
+        expect(tablePositionTwo).toEqual(null);
     })
 });

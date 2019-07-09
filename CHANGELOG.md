@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.5] - 2019-7-8
+
+  - now exports a function to obtain default serializer rules; see comment https://github.com/jasonphillips/slate-deep-table/issues/18#issuecomment-509439219
+
+## [0.9.1] - 2019-7-8
+
+  - compatibility with Slate 0.46.x
+
 ## [0.8.0] - 2018-11-2
 
   - compatibility with slate 0.43.x (thanks @eugene-preply )

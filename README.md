@@ -32,7 +32,7 @@ import DeepTable from 'slate-deep-table'
 
 const plugins = [
   DeepTable({ /* options object here; see below */ })
-];
+]
 
 // now instantiate your Slate Editor with these plugins, according to slate documentation
 ```
@@ -142,3 +142,5 @@ Move the selection by the given amount of columns and rows.
 `editor.toggleTableHeaders() => Editor`
 
 Toggles whether the table will render the first row as a header row (within a thead) or as a regular row.
+
+

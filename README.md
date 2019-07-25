@@ -89,17 +89,11 @@ position.getHeight(); // returns count of rows
 
 Insert a new empty table.
 
-#### `command insertTableByKey()`
+#### `command insertTableByKey/Path()`
 
 `editor.insertTableByKey(key: String, index: Number?, columns: Number?, rows: Number?) => Editor`
-
-Insert a new empty table by key, follows `insertNodeByKey()`'s insertion procedure. Index defaults to 0 if empty.
-
-#### `command insertTable()`
-
 `editor.insertTableByPath(path: List, index: Number?, columns: Number?, rows: Number?) => Editor`
-
-Insert a new empty table by path, follows `insertNodeByPath()`'s insertion procedure. Index defaults to 0 if empty.
+Insert a new empty table by Key/Path, follows `insertNodeByKey/Path()`'s insertion procedure. Index defaults to 0 if empty.
 
 #### `command insertRow()`
 

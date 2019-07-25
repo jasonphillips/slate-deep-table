@@ -28,11 +28,13 @@ Slate is a fast-moving library, so check the CHANGELOG for information on the cu
 ### Simple Usage
 
 ```js
-import DeepTable from 'slate-deep-table'
+import DeepTable from 'slate-deep-table';
 
 const plugins = [
-  DeepTable({ /* options object here; see below */ })
-]
+  DeepTable({
+    /* options object here; see below */
+  })
+];
 
 // now instantiate your Slate Editor with these plugins, according to slate documentation
 ```
@@ -49,7 +51,7 @@ const plugins = [
 `slate-deep-table` exports queries and commands that you can invoke on your `editor` instance:
 
 ```js
-// anywhere where 'editor' is passed as an argument, or using the react Component's ref, 
+// anywhere where 'editor' is passed as an argument, or using the react Component's ref,
 // you may directly invoke any of the exported functions below, e.g:
 const inATable = editor.isSelectionInTable();
 
@@ -58,7 +60,7 @@ if (!inATable) {
 }
 ```
 
-Check `example/main.js` for usage in a typical context. 
+Check `example/main.js` for usage in a typical context.
 
 #### `query isSelectionInTable()`
 
@@ -73,12 +75,12 @@ Return true if current cursor position is inside a table.
 Returns null if cursor is not in a table, else returns an object you can use to query the current cell and row location:
 
 ```js
-const position = editor.getTablePosition()
+const position = editor.getTablePosition();
 
-position.getRowIndex() // returns row id (0-indexed)
-position.getColumnIndex() // return column index (0-indexed)
-position.getWidth() // returns count of columns
-position.getHeight() // returns count of rows
+position.getRowIndex(); // returns row id (0-indexed)
+position.getColumnIndex(); // return column index (0-indexed)
+position.getWidth(); // returns count of columns
+position.getHeight(); // returns count of rows
 ```
 
 #### `command insertTable()`
@@ -86,6 +88,18 @@ position.getHeight() // returns count of rows
 `editor.insertTable(columns: Number?, rows: Number?) => Editor`
 
 Insert a new empty table.
+
+#### `command insertTableByKey()`
+
+`editor.insertTableByKey(key: String, index: Number?, columns: Number?, rows: Number?) => Editor`
+
+Insert a new empty table by key, follows `insertNodeByKey()`'s insertion procedure. Index defaults to 0 if empty.
+
+#### `command insertTable()`
+
+`editor.insertTableByPath(path: List, index: Number?, columns: Number?, rows: Number?) => Editor`
+
+Insert a new empty table by path, follows `insertNodeByPath()`'s insertion procedure. Index defaults to 0 if empty.
 
 #### `command insertRow()`
 
@@ -134,5 +148,3 @@ Move the selection by the given amount of columns and rows.
 `editor.toggleTableHeaders() => Editor`
 
 Toggles whether the table will render the first row as a header row (within a thead) or as a regular row.
-
-

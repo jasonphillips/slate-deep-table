@@ -92,7 +92,9 @@ Insert a new empty table.
 #### `command insertTableByKey/Path()`
 
 `editor.insertTableByKey(key: String, index: Number?, columns: Number?, rows: Number?) => Editor`
+
 `editor.insertTableByPath(path: List, index: Number?, columns: Number?, rows: Number?) => Editor`
+
 Insert a new empty table by Key/Path, follows `insertNodeByKey/Path()`'s insertion procedure. Index defaults to 0 if empty.
 
 #### `command insertRow()`

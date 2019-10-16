@@ -1,7 +1,7 @@
 {
   "name": "slate-deep-table",
   "description": "A Slate plugin to handle tables containing complex content.",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "license": "Apache-2.0",
   "repository": "git://github.com/jasonphillips/slate-deep-table.git",
   "main": "./dist/index.js",

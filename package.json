@@ -29,7 +29,7 @@
     "http-server": "^0.11.1",
     "immutable": "^3.8.1",
     "jsdom": "^15.1.1",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "react": ">=16.6.0",
     "react-dom": ">=16.6.0",
     "slate": "^0.47.x",
